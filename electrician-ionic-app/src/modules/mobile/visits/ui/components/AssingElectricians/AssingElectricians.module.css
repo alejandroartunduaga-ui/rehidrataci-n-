@@ -1,0 +1,76 @@
+.wrapper {
+  --padding-top: 24px;
+  --padding-bottom: 24px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+.card {
+  background: var(--background-weak);
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.tagBlack {
+  background: var(--surface-overlay-black);
+  border-radius: 12px;
+  padding: 4px 10px;
+  width: fit-content;
+}
+
+.loader {
+  background: var(--surface-overlay);
+}
+
+.selectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+ion-select {
+  --background: var(--background-standard);
+  --border-color: var(--border-standard);
+  --border-style: solid;
+  --placeholder-color: var(--ink-strong);
+  color: var(--ink-strong);
+}
+
+.rowSelect {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.addButton {
+  --background: var(----background-standard);
+  --background-activated: var(----background-standard);
+  --border-color: var(--ink-accent);
+  --border-width: 1px;
+  --border-style: solid;
+  --color: var(--ink-accent);
+  margin-top: 12px;
+  min-height: 36px !important;
+}
+
+.iconButton {
+  margin-right: 12px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.delecteElectricianButton {
+  --background: var(----background-standard);
+  --background-activated: var(----background-standard);
+  --border-color: transparent;
+}

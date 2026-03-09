@@ -1,0 +1,154 @@
+[
+  {
+    "parentField": {
+      "title": "¿El medidor está en celda?"
+    },
+    "conditions": [
+      {
+        "value": "No",
+        "hideFieldsByTitle": [
+          "Número de certificación de celda",
+          "Ingresar tipo de celda de medidor",
+          "Tipo de celda del medidor",
+          "Estado de celda del medidor"
+        ]
+      }
+    ]
+  },
+  {
+    "parentField": {
+      "title": "Marca del medidor"
+    },
+    "conditions": [
+      {
+        "value": "ELSTER",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "ITRON",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "MICROSTAR",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "INHEMETER",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "LINYANG",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "SUNRISE",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "ADDAX",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "LANDIS GYR",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "ISKRA",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "OSAKI-CDM",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "METCOM",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "NINGBO",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "HEXING",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "EMH",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "Actaris",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      },
+      {
+        "value": "Union",
+        "hideFieldsByTitle": ["Ingresar marca del medidor"]
+      }
+    ]
+  },
+  {
+    "parentField": {
+      "title": "¿Se instala celda de medidor?"
+    },
+    "conditions": [
+      {
+        "value": "No",
+        "hideFieldsByTitle": [
+          "Tipo de celda del medidor",
+          "Número de certificación de celda"
+        ]
+      }
+    ]
+  },
+  {
+    "parentField": {
+      "title": "¿Se instaló modem de respaldo?"
+    },
+    "conditions": [
+      {
+        "value": "No",
+        "hideFieldsByTitle": [
+          "IP",
+          "Puerto",
+          "Serie modem",
+          "Marca",
+          "IMEI",
+          "IMEI SIM"
+        ]
+      }
+    ]
+  },
+  {
+    "parentField": {
+      "title": "¿ Los TPs están en celda?"
+    },
+    "conditions": [
+      {
+        "value": "No",
+        "hideFieldsByTitle": [
+          "Estado de celda de TPs",
+          "Tipo de celda de TPs",
+          "Ingresar tipo de celda de TPs",
+          "Número de certificación de celda de TPs",
+          "Descripción de ubicación de celda de TPs"
+        ]
+      }
+    ]
+  },
+  {
+    "parentField": {
+      "title": "¿Se encontró planta de respaldo?"
+    },
+    "conditions": [
+      {
+        "value": "No",
+        "hideFieldsByTitle": [
+          "Capacidad (kVA) (HP)",
+          "Capacidad de horas de uso",
+          "Serie de la planta",
+          "Tipo de uso"
+        ]
+      }
+    ]
+  }
+]

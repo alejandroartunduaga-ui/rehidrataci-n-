@@ -1,0 +1,69 @@
+.textAreaContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  margin-top: 15px;
+}
+
+.labelText {
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 14px !important;
+  color: var(--ink-weak);
+}
+
+.textAreaWrapper {
+  position: relative;
+}
+
+.customTextArea {
+  border: 1px solid var(--border-standard);
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px 0px rgba(227, 227, 233, 0.25);
+  caret-color: auto;
+  color: var(--ink-strong);
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  --padding-bottom: 12px;
+  --padding-end: 12px;
+  --padding-start: 12px;
+  --padding-top: 12px;
+  --highlight-color-focused: var(--background-accent);
+  --highlight-height: 0px;
+}
+
+.customTextArea.focused {
+  border: 1px solid var(--background-accent);
+}
+
+.customTextArea.error {
+  border-color: var(--ink-error);
+}
+
+.textAreaWrapper textarea {
+  resize: vertical;
+}
+
+.textAreaWrapper.error textarea {
+  border-color: var(--ink-error);
+}
+
+.textAreaContainer .errorMessage {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--ink-error);
+}
+
+@media (min-width: 768px) {
+  .customTextArea {
+    border-radius: 8px;
+    font-size: 12px;
+    min-height: 120px;
+    height: 120px;
+    --padding-bottom: 8px;
+    --padding-top: 8px;
+  }
+}

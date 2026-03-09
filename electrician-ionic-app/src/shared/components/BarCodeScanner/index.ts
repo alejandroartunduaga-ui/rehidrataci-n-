@@ -1,0 +1,1 @@
+export { BarCodeScanner } from './BarCodeScanner';

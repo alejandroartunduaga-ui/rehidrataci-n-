@@ -1,0 +1,209 @@
+.costContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 44px;
+  padding-top: 24px;
+}
+
+.costHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.costTitle {
+  color: var(--ink-strong);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.expiredMessage {
+  color: var(--chart-red);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.formGrid {
+  display: grid;
+  gap: 10px 20px;
+  margin-top: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formFieldFull {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  grid-column: 1 / -1;
+}
+
+.costInput {
+  width: 100%;
+}
+
+.costTextArea {
+  width: 100%;
+}
+
+.errorText {
+  color: var(--chart-red);
+  font-size: 11px;
+  margin-top: -10px;
+}
+
+.actionsContainer {
+  border-top: 1px solid var(--greys-grey-20);
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+
+.saveButton {
+  align-items: center;
+  background: var(--background-accent);
+  border: none;
+  border-radius: 8px;
+  color: var(--ink-inverse);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  font-weight: 600;
+  height: 32px;
+  justify-content: center;
+  padding: 0 16px;
+  transition: background 0.2s;
+}
+
+.saveButton:disabled {
+  background: var(--greys-grey-20);
+  color: var(--ink-disabled);
+  cursor: not-allowed;
+}
+
+.fileUploadSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fileUploadTitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.uploadButton {
+  align-items: center;
+  background: var(--background-standard);
+  border: 1px dashed var(--border-standard);
+  border-radius: 8px;
+  color: var(--ink-strong);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 500;
+  gap: 8px;
+  justify-content: center;
+  min-height: 100px;
+  padding: 16px;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.uploadButton:hover:not(:disabled) {
+  background: var(--greys-grey-10);
+  border-color: var(--background-accent);
+}
+
+.uploadButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.uploadButton span {
+  color: var(--ink-strong);
+}
+
+.filePreview {
+  align-items: center;
+  background: var(--greys-grey-10);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.fileInfo {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 12px;
+}
+
+.fileDetails {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fileActions {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+
+.removeFileButton {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  transition: background 0.2s;
+}
+
+.removeFileButton:hover:not(:disabled) {
+  background: var(--greys-grey-20);
+}
+
+.removeFileButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.downloadFileButton {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  transition: background 0.2s;
+}
+
+.downloadFileButton:hover {
+  background: var(--greys-grey-20);
+}
+
+.downloadFileButton:active {
+  opacity: 0.7;
+}

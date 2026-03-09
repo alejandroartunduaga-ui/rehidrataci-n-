@@ -1,0 +1,98 @@
+{
+  "title": "Alcances",
+  "filters": {
+    "bia_code_placeholder": "Código BIA",
+    "phase_placeholder": "Fase",
+    "scope_type_placeholder": "Tipo de alcance",
+    "network_operator_placeholder": "Operador de red",
+    "all_phases": "Todas las fases",
+    "all_scope_types": "Todos los tipos de alcance",
+    "all_network_operators": "Todos los operadores de red"
+  },
+  "tabs": {
+    "validation": "Validación de documentos",
+    "definition": "Definición de alcance",
+    "finished": "Finalizado"
+  },
+  "table": {
+    "empty_state": "No se encontraron resultados. Inténtalo nuevamente."
+  },
+  "detail": {
+    "sections": {
+      "general_info": "Información general de la frontera",
+      "technical_info": "Información técnica de la frontera",
+      "ot_info": "Información de las OTs de la frontera",
+      "cgm_info": "Información de CGM",
+      "scope_definition": "Definición de alcance"
+    },
+    "general_info_fields": {
+      "contract_id": "Contract ID",
+      "bia_code": "Código BIA",
+      "sic_code": "Código SIC",
+      "border_name": "Nombre de la frontera",
+      "monthly_consumption": "Consumo (kWh-mes)",
+      "network_operator": "Operador de Red",
+      "department": "Departamento",
+      "city": "Ciudad",
+      "address": "Dirección"
+    },
+    "technical_info_fields": {
+      "measurement_type": "Tipo de medida",
+      "voltage_level": "Nivel de tensión",
+      "measurement_factor": "Factor de medida",
+      "meter_serial": "Serie del medidor",
+      "current_meter_brand": "Marca del medidor actual",
+      "current_ip": "IP actual",
+      "current_apn": "APN actual",
+      "ageing_without_tm": "Ageing sin TM"
+    },
+    "ot_info_fields": {
+      "last_visit_service_type": "Motivo de la última visita",
+      "total_telemetry_work_orders": "Total de OTs de telemedida",
+      "last_visit_date": "Fecha de la última visita",
+      "total_successful_telemetry": "OTs Exitosas Telemedida",
+      "last_visit_observation": "Comentario de cierre de la última OT general de la cuenta",
+      "last_successful_observation": "Comentario de la última OT de normalización de telemedida"
+    },
+    "cgm_info_fields": {
+      "failure_cause": "Causa de la falla",
+      "sustained_ip_test": "Prueba de IP sostenida 15 segundos",
+      "ip_test_image": "Imagen de la prueba",
+      "port_tests": "Pruebas de puerto 4000 y 5000",
+      "port_tests_image": "Imagen de las pruebas de puerto",
+      "text_message_recovery_test": "Prueba de recuperación por mensaje de texto",
+      "recovery_test_image": "Imagen de la prueba de recuperación",
+      "meter_telemetry_test": "Prueba de telemetría del medidor",
+      "additional_observations": "Observaciones adicionales"
+    },
+    "scope_definition_form": {
+      "type_service_label": "Seleccione el tipo de servicio",
+      "type_service_placeholder": "Seleccione tipo de servicio",
+      "type_service_options": {
+        "telemetry_normalization": "Normalización de telemedida",
+        "emergency_normalization": "Normalización de emergencia"
+      },
+      "requires_network_operator": "¿Requiere acompañamiento de operador de red?",
+      "scope_description_label": "Alcance",
+      "scope_description_placeholder": "Escriba el alcance...",
+      "requires_kit": "¿Requiere kit?",
+      "requires_additional_equipment": "¿Requiere equipos adicionales?",
+      "select_skus": "Seleccione los SKUs",
+      "select_skus_placeholder": "Seleccione SKUs",
+      "quantity_label": "Cantidad",
+      "add_sku": "Añadir SKU",
+      "finalize_scope": "Finalizar alcance",
+      "yes": "Sí",
+      "no": "No",
+      "saving": "Guardando...",
+      "success_message": "Alcance guardado exitosamente",
+      "error_message": "Error al guardar el alcance"
+    }
+  },
+  "modal_confirm_scope": {
+    "title": "Confirmar finalización de alcance",
+    "message": "¿Estás seguro que quieres finalizar el alcance?",
+    "button_confirm": "Aceptar",
+    "button_cancel": "Cancelar"
+  }
+}

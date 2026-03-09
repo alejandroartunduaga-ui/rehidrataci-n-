@@ -1,0 +1,191 @@
+.modalFullscreen {
+  --width: 100%;
+  --height: 100%;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--background-standard);
+  box-shadow: none;
+}
+
+.longtext {
+  max-width: 90%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.containerFitler {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--greys-grey-20);
+}
+
+.containerNotifications {
+  padding: 0;
+}
+
+.unreadNotification {
+  --background: var(--background-weak);
+}
+
+.notificationItem {
+  border-bottom: 1px solid var(--greys-grey-20);
+  --border-color: transparent;
+}
+
+.notificationContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px 20px 10px;
+  width: 100%;
+}
+
+.iconContainer {
+  background: var(--greys-grey-20);
+  border-radius: 25.778px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-bottom: 2px;
+}
+
+.captionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.notificationTitle {
+  margin-bottom: 0;
+}
+
+.notificationDescription {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--ink-weak);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.notificationDescription p {
+  margin: 0;
+  line-height: 16px;
+}
+
+.notificationDescription strong,
+.notificationDescription b {
+  font-weight: 600;
+  color: var(--ink-standard);
+}
+
+.notificationDescription em,
+.notificationDescription i {
+  font-style: italic;
+}
+
+.notificationDescription a {
+  color: var(--ink-accent);
+  text-decoration: none;
+}
+
+.notificationDescription a:hover {
+  text-decoration: underline;
+}
+
+.notificationDate {
+  margin-bottom: 0;
+  line-height: 16px;
+}
+
+.dateHighlight,
+.timeHighlight {
+  font-weight: 600;
+  color: var(--ink-standard);
+}
+
+.actionContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.viewButton {
+  padding: 12px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.unreadIndicator {
+  width: 10px;
+  height: 10px;
+  background: var(--ink-error);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: absolute;
+  right: 25px;
+}
+
+.emptyState {
+  height: calc(100vh - 56px - 64px - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.emptyStateIcon {
+  width: 64px;
+  height: 64px;
+  background: var(--greys-grey-20);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grantedMessage {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  padding: 16px 8px;
+  border: 1px solid var(--chart-green01);
+  background: var(--chart-green05);
+  border-radius: 16px;
+}
+
+.blockedMessage {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  padding: 16px 8px;
+  border: 1px solid var(--ink-warning);
+  background: var(--chart-orange05);
+  border-radius: 16px;
+}
+
+.blockedMessageIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.requestPermissionsButtonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

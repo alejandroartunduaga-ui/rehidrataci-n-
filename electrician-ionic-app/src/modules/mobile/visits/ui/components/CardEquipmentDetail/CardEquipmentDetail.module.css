@@ -1,0 +1,170 @@
+/* Card principal */
+.card {
+  background: var(--background-standard, #ffffff);
+  position: relative;
+  border-radius: 16px;
+  box-shadow:
+    0px 0px 1px 0px rgba(28, 17, 96, 0.25),
+    0px 3px 8px 0px rgba(8, 8, 10, 0.05);
+  width: 100%;
+  padding: 16px;
+  /* Altura aproximada basada en el diseño */
+}
+
+/* Grupo de información principal */
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* Header de la tarjet
+
+/* Título */
+.title {
+  font-size: 18px !important;
+}
+
+/* Grupo de items de información */
+.itemGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.serialInfo,
+.expirationInfo,
+.brandInfo {
+  display: flex;
+  gap: 8px;
+}
+.label {
+  font-size: 15px !important;
+}
+.value {
+  font-size: 15px !important;
+  color: var(--ink-standard-on) !important;
+}
+
+/* Background camera */
+.backgroundCamera {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 56px);
+}
+
+/* Overlay principal que cubre toda la pantalla */
+.pointCamera1 {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100vw;
+  height: calc(100% - 56px);
+  z-index: 9998;
+  pointer-events: none;
+}
+
+/* Crear área central transparente de 314x314px usando clip-path */
+.pointCamera1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #23242636;
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    calc(50% - 157px) 100%,
+    calc(50% - 157px) calc(50% - 157px),
+    calc(50% + 157px) calc(50% - 157px),
+    calc(50% + 157px) calc(50% + 157px),
+    calc(50% - 157px) calc(50% + 157px),
+    calc(50% - 157px) 100%,
+    100% 100%,
+    100% 0%
+  );
+}
+
+/* Esquina superior izquierda */
+.pointCamera2 {
+  position: fixed;
+  top: calc(50% - 157px + 28px);
+  left: calc(50% - 157px);
+  width: 40px;
+  height: 40px;
+  border-top: 4px solid #fffbfb;
+  border-left: 4px solid #fffbfb;
+  border-radius: 8px 0 0 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Esquina superior derecha */
+.pointCamera3 {
+  position: fixed;
+  top: calc(50% - 157px + 28px);
+  left: calc(50% + 117px);
+  width: 40px;
+  height: 40px;
+  border-top: 4px solid #fffbfb;
+  border-right: 4px solid #fffbfb;
+  border-radius: 0 8px 0 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Esquina inferior izquierda */
+.pointCamera4 {
+  position: fixed;
+  top: calc(50% + 117px + 28px);
+  left: calc(50% - 157px);
+  width: 40px;
+  height: 40px;
+  border-bottom: 4px solid #fffbfb;
+  border-left: 4px solid #fffbfb;
+  border-radius: 0 0 0 8px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Esquina inferior derecha */
+.pointCamera4::after {
+  content: '';
+  position: fixed;
+  top: calc(50% + 117px + 28px);
+  left: calc(50% + 117px);
+  width: 40px;
+  height: 40px;
+  border-bottom: 4px solid #fffbfb;
+  border-right: 4px solid #fffbfb;
+  border-radius: 0 0 8px 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: var(--background-standard-dark, #1a1a1a);
+    box-shadow:
+      0px 0px 1px 0px rgba(255, 255, 255, 0.1),
+      0px 3px 8px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .title {
+    color: var(--ink-strong-dark, #ffffff);
+  }
+
+  .label {
+    color: var(--ink-standard-dark, #e0e0e0);
+  }
+
+  .value {
+    color: var(--ink-weak-dark, #a0a0a0);
+  }
+}

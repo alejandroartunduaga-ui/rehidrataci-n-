@@ -1,0 +1,43 @@
+.searchListContainer {
+  width: 100%;
+}
+.searchInput {
+  margin-bottom: 8px !important;
+}
+.clearButton {
+  top: 41% !important;
+}
+.optionsList {
+  margin-top: -18px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.divider {
+  background: var(--greys-grey-20);
+  height: 1px;
+  margin: 8px 0px;
+}
+.option {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--ink-standard-on);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  padding: 12px 8px;
+  text-align: left;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  width: 100%;
+}
+.option:hover {
+  background: var(--background-weak);
+}
+.radioIcon {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}

@@ -1,0 +1,16 @@
+.subtitle {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: flex;
+  margin-bottom: 7px;
+}
+
+.inputDropdown {
+  flex: 1 1 0%;
+  min-width: 0 !important;
+  width: 100% !important;
+  margin-bottom: 15px;
+}

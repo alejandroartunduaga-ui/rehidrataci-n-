@@ -1,0 +1,137 @@
+.detailContainer {
+  padding: 0px 32px 0px 0px;
+  position: absolute;
+  width: -webkit-fill-available;
+}
+
+.tabsContainer {
+  align-items: flex-end;
+  border-bottom: 1px solid var(--greys-grey-20);
+  display: flex;
+  padding: 0px 32px 0px 32px;
+  justify-content: space-around;
+}
+
+.tabItem {
+  background: none;
+  border: none;
+  color: var(--ink-weak-on);
+  cursor: pointer;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 8px 24px 12px 24px;
+  position: relative;
+  text-align: center;
+  transition: color 0.15s;
+}
+
+.tabItemActive {
+  color: var(--ink-accent);
+}
+
+.tabItemActive::after {
+  background: var(--background-accent);
+  bottom: -1px;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.contentContainer {
+  display: flex;
+  height: calc(100vh - 160px);
+  padding: 25px;
+  overflow: auto;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  animation: fadeInSlide 0.3s ease-in-out;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 32px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.value {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.cgmGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.cgmColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--greys-grey-20);
+  object-fit: cover;
+}

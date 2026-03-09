@@ -1,0 +1,11 @@
+.chip {
+  padding: 8px 12px;
+  border-radius: 16px;
+  background-color: var(--greys-grey-20);
+  width: fit-content;
+  white-space: nowrap;
+}
+
+.chipActive {
+  background-color: var(--background-accent);
+}

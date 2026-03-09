@@ -1,0 +1,173 @@
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 4px 0;
+}
+
+.cardOT {
+  background: var(--color-surface-secondary);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.title {
+  color: var(--color-text-standard);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.otInfoRow {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rowTitle {
+  min-width: 100px;
+}
+
+.uploadSection {
+  align-items: center;
+  background: var(--background-standard);
+  border: 1px dashed var(--border-standard);
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(227, 227, 233, 0.25);
+  display: flex;
+  gap: 21px;
+  justify-content: space-between;
+  padding: 16px 12px;
+}
+
+.documentName {
+  word-break: break-word;
+}
+
+.dropzone {
+  align-items: center;
+  background: var(--color-surface-primary);
+  border: 2px dashed var(--color-border-weak);
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  min-height: 200px;
+  padding: 32px 24px;
+  transition: all 0.2s ease;
+}
+
+.dropzone:hover {
+  background: var(--color-surface-secondary);
+  border-color: var(--color-border-standard);
+}
+
+.dragActive {
+  background: var(--color-accent-surface);
+  border-color: var(--color-accent-primary);
+}
+
+.hasFile {
+  background: var(--color-surface-secondary);
+  border-color: var(--color-accent-primary);
+  min-height: auto;
+  padding: 16px 24px;
+}
+
+.dropzoneContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.uploadIcon {
+  margin-bottom: 8px;
+}
+
+.fileInputLabel {
+  cursor: pointer;
+}
+
+.fileInput {
+  display: none;
+}
+
+.browseButton {
+  color: var(--color-accent-primary);
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.browseButton:hover {
+  color: var(--color-accent-secondary);
+}
+
+.filePreview {
+  align-items: center;
+  background: var(--color-surface-primary);
+  border: 1px solid var(--color-border-weak);
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  width: 100%;
+}
+
+.fileIcon {
+  flex-shrink: 0;
+}
+
+.fileInfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.fileInfo span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.removeFile {
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: 4px;
+}
+
+.removeFile:hover {
+  background: var(--color-surface-secondary);
+}
+
+.uploadButton {
+  align-items: center;
+  background: var(--greys-grey-20);
+  border: none;
+  border-radius: 8px;
+  color: var(--ink-weak-on);
+  cursor: pointer;
+  display: flex;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  gap: 8px;
+  height: 24px;
+  line-height: 24px;
+  padding: 8px;
+  pointer-events: none;
+  text-align: center;
+}

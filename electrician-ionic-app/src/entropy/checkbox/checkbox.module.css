@@ -1,0 +1,24 @@
+ion-checkbox {
+  --size: 24px;
+  --checkbox-background-checked: var(--ink-accent);
+}
+
+ion-checkbox::part(container) {
+  border-radius: 0.5rem;
+  border: 2px solid var(--ink-accent);
+  padding: 3px;
+}
+
+ion-checkbox::part(label) {
+  white-space: normal;
+}
+
+.helperText,
+.errorText,
+.message {
+  margin: 0;
+}
+
+.container_checkbox {
+  display: flex;
+}

@@ -1,0 +1,33 @@
+.tag {
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  height: 24px;
+  justify-content: center;
+  line-height: 16px;
+}
+
+.corner {
+  border-radius: 16px 0px;
+}
+
+.rounded {
+  border-radius: 16px;
+}
+
+.square {
+  border-radius: 8px;
+}
+
+.small {
+  height: 16px;
+  padding: 2px 8px;
+  font-size: 10px;
+  width: fit-content;
+}
+
+.medium {
+  height: 24px;
+  padding: 2px 16px;
+  font-size: 12px;
+}

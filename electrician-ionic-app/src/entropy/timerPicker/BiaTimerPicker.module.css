@@ -1,0 +1,131 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.labelText {
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.buttonWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.timeButton {
+  align-items: center;
+  background: var(--background-standard);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  color: var(--ink-standard);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  height: 32px;
+  padding: 8px;
+  padding-right: 32px;
+  text-align: left;
+  transition: border 0.2s;
+  width: 100%;
+}
+
+.timeButton:hover {
+  border-color: var(--background-accent);
+}
+
+.timeButton:disabled {
+  background: var(--background-weak);
+  color: var(--ink-disabled);
+  cursor: not-allowed;
+}
+
+.clearButton {
+  align-items: center;
+  background: var(--ink-weak);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 12px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 0;
+  width: 12px;
+  position: absolute;
+  right: 10px;
+}
+
+.clearButton:hover {
+  opacity: 0.7;
+}
+
+.clearButton:active {
+  opacity: 0.5;
+}
+
+/* Estilos para IonDatetime cuando se renderiza en portal */
+ion-datetime.pickerDatetime {
+  position: fixed;
+  background: var(--ink-inverse);
+  border: 0.886px solid var(--border-standard);
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 8px 0px rgba(28, 17, 96, 0.15);
+  color: var(--ink-standard);
+  font-size: 12.4px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 12px !important;
+  padding-top: 16px;
+  text-align: center;
+  z-index: 10000;
+  /* Variables CSS de Ionic */
+  --background: var(--ink-inverse);
+  --background-rgb: 255, 255, 255;
+  --ion-color-primary: var(--background-accent);
+  --ion-color-primary-rgb: 99, 91, 255;
+  --ion-color-primary-contrast: #fff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-step-50: var(--background-weak);
+  --ion-color-step-100: var(--greys-grey-10);
+  --ion-color-step-150: var(--greys-grey-20);
+  --ion-text-color: var(--ink-standard);
+  --ion-text-color-rgb: 28, 17, 96;
+  max-width: 280px;
+  font-size: 12px;
+}
+
+ion-datetime.pickerDatetime::part(time-button) {
+  position: relative;
+  z-index: 99999;
+  font-size: 11px;
+  padding: 3px 6px;
+}
+
+ion-datetime.pickerDatetime::part(wheel-item) {
+  font-size: 13px;
+  color: var(--ink-standard);
+}
+
+ion-datetime.pickerDatetime::part(wheel-item active) {
+  color: var(--background-accent);
+  font-weight: 600;
+}
+
+ion-datetime.pickerDatetime::part(time-header) {
+  font-size: 12px;
+  padding: 6px;
+}
+
+ion-datetime.pickerDatetime::part(time-body) {
+  font-size: 13px;
+}

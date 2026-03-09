@@ -1,0 +1,60 @@
+.filtersContainer {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 73px 40px;
+  width: 100%;
+  padding: 0 25px;
+}
+
+.codeInput {
+  flex: 1 1 0%;
+  min-width: 0 !important;
+  width: 100% !important;
+  margin-bottom: 0px !important;
+}
+
+.dateInput {
+  min-width: 0;
+  width: 100%;
+}
+
+.inputActive {
+  border: 1px solid var(--background-accent) !important;
+  box-shadow: none !important;
+}
+
+.filtersCount {
+  align-items: center;
+  background: var(--ink-inverse);
+  border: 1.5px solid var(--border-standard);
+  border-radius: 8px;
+  color: var(--ink-standard);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  gap: 10px;
+  height: 32px;
+  justify-self: end;
+  padding: 0px 12px;
+  width: 73px;
+}
+
+.filtersClear {
+  align-items: center;
+  background: var(--greys-grey-20);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(227, 227, 233, 0.25);
+  color: var(--ink-standard);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  gap: 8px;
+  height: 32px;
+  justify-content: center;
+  justify-self: end;
+  padding: 0 8px;
+  width: 40px;
+}

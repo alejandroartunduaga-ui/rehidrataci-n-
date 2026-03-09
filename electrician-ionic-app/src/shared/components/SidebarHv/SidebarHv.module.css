@@ -1,0 +1,84 @@
+.sidebarContainer {
+  border-right: 1px solid var(--greys-grey-20);
+  height: 100vh;
+  padding: 24px 16px;
+  transition: all 0.3s ease-in-out;
+  width: 195px;
+  overflow: hidden;
+}
+
+.buttonCollapse {
+  align-items: center;
+  background-color: var(--background-weak);
+  border-radius: 16px;
+  color: var(--ink-standard-on);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  gap: 4px;
+  height: 24px;
+  justify-content: center;
+  left: 183px;
+  position: absolute;
+  top: 76px;
+  transition: left 0.3s ease-in-out;
+  width: 24px;
+  z-index: 2;
+}
+
+.collapsed .buttonCollapse {
+  left: 60px;
+  transition: left 0.3s ease-in-out;
+}
+
+.collapsed {
+  transition: all 0.3s ease-in-out;
+  width: 72px;
+}
+
+.itemName {
+  opacity: 1;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out;
+  visibility: visible;
+}
+
+.collapsed .itemName {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+.item {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--ink-standard-on);
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  min-height: 40px;
+  width: 100%;
+}
+
+.item:hover {
+  background: var(--background-weak);
+}
+
+.itemIcon.active {
+  color: var(--ink-accent) !important;
+}
+
+.itemIcon {
+  font-size: 16px;
+  margin: 12px;
+}
+
+.item.active {
+  background: var(--background-weak);
+  color: var(--ink-accent);
+  font-weight: 600;
+}

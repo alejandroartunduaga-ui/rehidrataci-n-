@@ -1,0 +1,69 @@
+.titleContainer {
+  border-bottom: 1px solid var(--greys-grey-20);
+  padding: 25px;
+}
+
+.tabsContainer {
+  align-items: flex-end;
+  border-bottom: 1px solid var(--greys-grey-20);
+  display: flex;
+  padding: 0px 32px 0px 32px;
+  justify-content: space-around;
+}
+
+.tabItem {
+  background: none;
+  border: none;
+  color: var(--ink-weak-on);
+  cursor: pointer;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 8px 24px 12px 24px;
+  position: relative;
+  text-align: center;
+  transition: color 0.15s;
+}
+
+.tabItemActive {
+  color: var(--ink-accent);
+}
+
+.tabItemActive::after {
+  background: var(--background-accent);
+  bottom: -1px;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.contentContainer {
+  display: flex;
+  height: calc(100vh - 160px);
+  padding: 25px;
+  overflow: hidden;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: min-content;
+  animation: fadeInSlide 0.3s ease-in-out;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

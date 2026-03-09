@@ -1,0 +1,145 @@
+.dateRangePickerContainer {
+  background: var(--ink-inverse);
+  border: 0.886px solid var(--border-standard);
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 8px 0px rgba(28, 17, 96, 0.15);
+  color: var(--ink-standard);
+  font-size: 12.4px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 12px !important;
+  min-height: 308px;
+  min-width: 506px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.rdp {
+  --rdp-accent-color: var(--background-accent);
+  --rdp-background-color: var(--ink-standard);
+  --rdp-outline: 1px solid var(--background-accent);
+  --rdp-selected-color: #fff;
+  --rdp-selected-bg: var(--background-accent);
+  --rdp-today-bg: var(--background-weak);
+  --rdp-range-bg: var(--chart-purple05);
+  --rdp-cell-size: 24px;
+}
+
+.rdp-day,
+.rdp-cell {
+  height: 24px !important;
+  margin: 0 4px 4px 0 !important;
+  max-height: 24px !important;
+  max-width: 24px !important;
+  min-height: 24px !important;
+  min-width: 24px !important;
+  width: 24px !important;
+}
+
+.rdp-day {
+  border: none;
+  border-radius: 8px;
+  color: var(--ink-standard);
+  font-weight: 400;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.inRange {
+  background: var(--chart-purple05) !important;
+  border-radius: 8px !important;
+  color: var(--ink-weak-on) !important;
+}
+
+.rangeStart {
+  background: var(--background-accent) !important;
+  border: 1px solid var(--background-accent) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+}
+
+.rangeEnd {
+  background: var(--background-accent) !important;
+  border: 1px solid var(--background-accent) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+}
+
+.today {
+  background: #fff !important;
+  border: 1px solid var(--background-accent) !important;
+  border-radius: 8px !important;
+  color: var(--background-accent) !important;
+}
+
+.rdp-day_selected:not(.rangeStart):not(.rangeEnd) {
+  background: #ede9fe !important;
+  color: var(--background-accent) !important;
+}
+
+.rdp-day_disabled {
+  background: transparent !important;
+  color: var(--ink-weak-on) !important;
+  cursor: not-allowed !important;
+}
+
+.actions {
+  border-top: 1px solid var(--border-standard);
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  padding: 12px 16px;
+}
+
+.clearBtn {
+  align-items: center;
+  background: var(--greys-grey-20);
+  border: none;
+  border-radius: 8px;
+  color: var(--ink-gray);
+  cursor: pointer;
+  display: flex;
+  font-size: 10px;
+  font-weight: 600;
+  height: 24px;
+  padding: 12px;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border 0.15s;
+}
+
+.clearBtn:disabled {
+  color: var(--border-standard);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.confirmBtn {
+  align-items: center;
+  background: var(--background-accent);
+  border: none;
+  border-radius: 8px;
+  color: var(--ink-inverse);
+  cursor: pointer;
+  display: flex;
+  font-size: 10px;
+  font-weight: 600;
+  height: 24px;
+  padding: 12px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.confirmBtn:disabled {
+  background: var(--greys-grey-20);
+  color: var(--border-standard);
+  cursor: not-allowed;
+}
+
+.inputActive {
+  border: 1px solid var(--border-accent) !important;
+  box-shadow: none !important;
+}

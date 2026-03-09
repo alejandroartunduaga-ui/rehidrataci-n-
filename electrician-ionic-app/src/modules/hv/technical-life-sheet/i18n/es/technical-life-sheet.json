@@ -1,0 +1,55 @@
+{
+  "title": "Hoja de Vida Técnica",
+  "card_form_hv": {
+    "code_bia": "Código Bia y Contract ID",
+    "code_sic": "Código SIC",
+    "button_consultar": "Buscar frontera",
+    "code_bia_placeholder": "Ingrese código Bia o Contract ID",
+    "code_sic_placeholder": "Ingrese código SIC"
+  },
+  "card_detail_frontier": {
+    "title": "Datos de la frontera",
+    "contract_id": "Contract ID",
+    "contract_name": "Nombre de la frontera",
+    "network_operator": "Operador de Red",
+    "company_id": "Company ID",
+    "code_sic": "Código SIC",
+    "internal_bia_code": "Código Bia",
+    "address": "Dirección"
+  },
+  "card_table_versions": {
+    "title": "Versiones de Hoja de Vida",
+    "version": "Versión",
+    "created_at": "Fecha de Creación",
+    "user": "Usuario",
+    "actions": "Acciones",
+    "download_pdf": "Descargar PDF",
+    "no_versions": "No hay versiones disponibles"
+  },
+  "pagination": {
+    "page": "Pág",
+    "of": "de"
+  },
+  "error_search_contract": "Error al buscar la frontera.",
+  "error_search_contract_404": "No se encontraron fronteras con los criterios ingresados.",
+  "error_get_detail_pdf": "No se encontro el detalle de la frontera",
+  "error_get_detail_pdf_version": "No se encontro la versión de la frontera",
+  "error_load_document": "Error al cargar el documento. Por favor, intenta descargarlo directamente.",
+  "download_pdf": "Descargar PDF",
+  "field_required": "Campo obligatorio",
+  "error_format_invalid": "Formato inválido",
+  "detail_technical_life_sheet": {
+    "save_technical_life_sheet": "Guardar versión",
+    "save_technical_life_sheet_success": "Hoja de vida guardada exitosamente",
+    "save_technical_life_sheet_error": "Error al guardar la hoja de vida",
+    "select_file": "Seleccionar imagen",
+    "add_more_files": "Agregar más imágenes",
+    "type_allowed": "Archivos permitidos: JPG, PNG, WEBP"
+  },
+  "modal_confirm_edit": {
+    "title": "Guardar versión",
+    "message": "¿Está seguro que desea guardar esta versión?",
+    "button_confirm": "Guardar",
+    "button_cancel": "Cancelar"
+  }
+}

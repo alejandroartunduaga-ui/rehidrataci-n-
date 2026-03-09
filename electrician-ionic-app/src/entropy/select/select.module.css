@@ -1,0 +1,48 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.labelText {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.customInput {
+  border: 1px solid var(--border-standard);
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px 0px rgba(227, 227, 233, 0.25);
+  caret-color: auto;
+  color: var(--ink-strong);
+  font-size: 14px;
+  font-weight: 400;
+  min-height: 48px;
+  width: 100%;
+  --padding-bottom: 12px;
+  --padding-end: 12px;
+  --padding-start: 12px;
+  --padding-top: 12px;
+  --highlight-color-focused: var(--background-accent);
+  --highlight-height: 0px;
+  --border-radius: 16px;
+}
+
+ion-select.customInput::part(label) {
+  color: transparent;
+}
+
+.focused {
+  border: 1px solid var(--background-accent);
+}
+
+.inputWrapper {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.error {
+  border-color: var(--ink-error);
+}

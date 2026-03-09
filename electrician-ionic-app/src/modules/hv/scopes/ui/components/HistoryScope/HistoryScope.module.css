@@ -1,0 +1,103 @@
+.contentContainer {
+  display: flex;
+  height: calc(100vh - 160px);
+  padding-left: 44px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 44px;
+  padding-top: 24px;
+  width: 100%;
+}
+
+.infoRow {
+  align-items: flex-start;
+  align-self: stretch;
+  border-bottom: 0.5px solid var(--greys-grey-20);
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 8px 12px 16px 12px;
+}
+
+/* Estilos para elementos de historial */
+.historyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.historyCard {
+  width: 100%;
+  border-bottom: 0.5px solid var(--greys-grey-20);
+  padding: 16px 12px;
+  background: var(--background-standard);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.historyIcon {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.historyIconContentItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  background: var(--background-accent-weak);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+
+.historyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.historyDescription {
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.historyDate {
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Línea vertical del timeline */
+.historyTimeLine {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% - 40px);
+  background: var(--greys-grey-20);
+  z-index: 1;
+}
+
+/* Ocultar línea en el último elemento */
+.historyItem:last-child .historyTimeLine {
+  display: none;
+}
+
+.historyNow,
+.historyBefore {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}

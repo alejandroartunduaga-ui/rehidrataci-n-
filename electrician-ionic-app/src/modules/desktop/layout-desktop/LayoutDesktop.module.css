@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 48px);
+  width: 100%;
+}
+
+.sidebar {
+  transition: min-width 0.5s ease-in-out;
+}
+
+.content {
+  flex: 1 1 0%;
+  min-width: 0;
+  overflow: auto;
+  transition: margin 0.5s;
+}

@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "@auth/*": ["src/modules/auth/*"],
+      "@entropy/*": ["src/entropy/*"],
+      "@mobile/*": ["src/modules/mobile/*"],
+      "@forms-management/*": ["src/modules/mobile/forms-management/*"],
+      "@home/*": ["src/modules/mobile/home/*"],
+      "@visits/*": ["src/modules/mobile/visits/*"],
+      "@visit-management/*": ["src/modules/mobile/visit-management/*"],
+      "@desktop/*": ["src/modules/desktop/*"],
+      "@hv/*": ["src/modules/hv/*"],
+      "@shared/*": ["src/shared/*"],
+      "@work-orders/*": ["src/modules/desktop/work-orders/*"],
+    }
+  },
+  "include": ["src", "src/types"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

@@ -1,0 +1,42 @@
+.wrap_version_app {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 100dvh;
+  width: 100%;
+  z-index: 1000;
+}
+
+.modal_version {
+  align-items: center;
+  background-color: aliceblue;
+  border-radius: 16px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  height: 30%;
+  padding: 16px;
+  text-align: center;
+  width: 80%;
+}
+
+.modal_version p {
+  margin-bottom: 0;
+}
+
+.rejectButton {
+  --background-activated: var(----background-standard);
+  --background: var(----background-standard);
+  --border-color: var(--ink-accent);
+  --border-style: solid;
+  --border-width: 1px;
+  --color: var(--ink-accent);
+}
+
+.hide {
+  display: none;
+}

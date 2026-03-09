@@ -1,0 +1,24 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.forgotPasswordText {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.forgotPasswordText a {
+  color: var(--ink-accent);
+  text-decoration: none;
+}
+
+.forgotPasswordText a:hover {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.errorText {
+  margin-top: 8px;
+}

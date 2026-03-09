@@ -1,0 +1,56 @@
+.mainContent {
+  padding: 24px 16px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  display: block;
+  margin: 0px 12px 24px;
+}
+
+.loader {
+  background: var(--surface-overlay);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 50px;
+  box-shadow: -2px -2px 4px 0px #e4e5e740;
+}
+
+.footerButton {
+  width: 100%;
+}
+
+.rejectButton {
+  --background: var(----background-standard);
+  --background-activated: var(----background-standard);
+  --border-color: var(--ink-accent);
+  --border-width: 1px;
+  --border-style: solid;
+  --color: var(--ink-accent);
+}
+
+.offlineAlert {
+  margin: 16px 16px 0px;
+}
+
+.buttonFailedvisit {
+  background: transparent;
+  border: none;
+  color: var(--ink-error);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.buttonFailedvisit.goBack {
+  color: var(--ink-accent);
+}

@@ -1,0 +1,196 @@
+.contentContainer {
+  padding: 25px;
+  margin-bottom: 95px;
+}
+
+.detailContainer {
+  padding: 0px 32px 0px 0px;
+}
+
+.accordionHeader {
+  font-weight: 600;
+}
+
+.fieldsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+.labelContainer {
+  grid-column: span 2;
+}
+
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelText {
+  font-weight: 600 !important;
+  font-size: 15px !important;
+}
+
+.tableFieldContainer {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.tableTitle {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin-bottom: 8px;
+}
+
+.fileFieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fileLabel {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.uploadButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--background-weak);
+  border: 2px dashed var(--border-standard);
+  border-radius: 8px;
+  color: var(--ink-standard);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.uploadButton:hover:not(:disabled) {
+  background: var(--background-standard);
+  border-color: var(--background-accent);
+}
+
+.uploadButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filePreviewContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.filePreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--background-standard);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.removeFileButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.removeFileButton:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.imagePreview {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--background-weak);
+  aspect-ratio: 1 / 1;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.submitContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 24px 16px;
+  margin-top: 24px;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--background-accent);
+  color: var(--ink-inverse);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--chart-purple08);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorText {
+  margin-top: 4px;
+}
+
+.messageTypeAllowed {
+  font-weight: 500 !important;
+  color: var(--ink-warning) !important;
+  margin-top: -5px;
+  font-size: 10px !important;
+}

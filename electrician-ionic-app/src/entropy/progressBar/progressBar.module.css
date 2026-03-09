@@ -1,0 +1,65 @@
+.progressBarContainer {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.label {
+  color: var(--ink-standard);
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.customProgressBar {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.customProgressBar.small {
+  height: 4px;
+}
+
+.customProgressBar.medium {
+  height: 8px;
+}
+
+.customProgressBar.large {
+  height: 12px;
+}
+
+/* Colores del progreso */
+.customProgressBar.primary {
+  --background: var(--greys-grey-20);
+  --progress-background: var(--background-accent);
+}
+
+.customProgressBar.success {
+  --progress-background: var(--ink-positive);
+}
+
+.customProgressBar.warning {
+  --progress-background: var(--ink-warning);
+}
+
+.customProgressBar.error {
+  --progress-background: var(--ink-error);
+}
+
+.progressInfo {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.progressText {
+  color: var(--ink-weak);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.progressPercentage {
+  color: var(--ink-standard);
+  font-size: 10px;
+  font-weight: 600;
+}

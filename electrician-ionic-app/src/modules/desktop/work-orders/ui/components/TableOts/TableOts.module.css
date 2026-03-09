@@ -1,0 +1,210 @@
+.tableOtsContainer {
+  margin-top: 24px;
+  max-height: 55vh;
+  overflow: auto;
+  scrollbar-color: #bfc3d4 #f7f8fa;
+  scrollbar-width: thin;
+  width: calc(100% - 50px);
+  margin-left: 25px;
+}
+
+.tableOtsContainer::-webkit-scrollbar {
+  background: #f7f8fa;
+  border-radius: 8px;
+  width: 8px;
+}
+.tableOtsContainer::-webkit-scrollbar-thumb {
+  background: #bfc3d4;
+  border-radius: 8px;
+}
+.tableOtsContainer::-webkit-scrollbar-thumb:hover {
+  background: #a0a4b8;
+}
+
+.tableOts {
+  background: var(--background-standard);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableOts th,
+.tableOts td {
+  border-bottom: 1px solid var(--greys-grey-20);
+  padding: 8px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tableOts th {
+  background: var(--background-standard);
+  color: var(--ink-standard);
+  font-size: 12px;
+  font-weight: 600;
+  position: relative;
+  z-index: 3;
+}
+
+.thead th {
+  background-color: var(--background-standard);
+  position: sticky;
+  top: 0;
+}
+
+.tableOts td {
+  color: var(--ink-weak);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.tableOts th.stickyColRight,
+.tableOts td.stickyColRight {
+  background: var(--background-standard);
+  border-left: 1px solid var(--greys-grey-20);
+  box-shadow: -2px 0 4px -2px var(--greys-grey-20);
+  position: sticky;
+  right: 0;
+}
+
+.tableOts td.stickyColRight.selectedContextOT {
+  background: var(--greys-grey-20);
+}
+
+.pagination {
+  border-bottom: 1px solid var(--greys-grey-20);
+  border-top: 1px solid var(--greys-grey-20);
+  color: var(--ink-weak);
+  display: flex;
+  font-size: 10px;
+  gap: 24px;
+  justify-content: end;
+  padding: 16px 24px;
+}
+
+.iconsPaginator {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.iconRow {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.tableOts tbody tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.tableOts tbody tr:hover {
+  background: var(--background-weak, #f7f8fa);
+}
+
+.ellipsisText {
+  cursor: pointer;
+  display: inline-block;
+  max-width: 160px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.ellipsisText:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tooltip {
+  background: var(--background-weak);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  color: var(--ink-weak-on);
+  font-size: 12px;
+  font-weight: 600;
+  left: 50%;
+  opacity: 0;
+  padding: 0px;
+  pointer-events: none;
+  position: absolute;
+  top: 120%;
+  transform: translateX(-50%);
+  transition: opacity 0.15s;
+  white-space: pre;
+  z-index: 10;
+}
+
+.tableOts td,
+.tableOts tr,
+.tableOts tbody,
+.tableOts {
+  overflow: visible !important;
+}
+
+.emptyState {
+  align-items: center;
+  border-bottom: 1px solid var(--border-standard);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 8px 12px;
+}
+
+.selectedContextOT {
+  background: var(--background-weak);
+}
+
+.contextMenuOverlay {
+  background: transparent;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.contextMenu {
+  border: 1px solid var(--greys-grey-20);
+  background: var(--background-standard);
+  box-shadow: 0.5px 0.8px 8px 0px rgba(28, 17, 96, 0.15);
+  border-radius: 8px;
+  width: 174px;
+  position: absolute;
+  z-index: 1001;
+}
+
+.contextMenuItem {
+  cursor: pointer;
+  padding: 12px;
+  text-align: left;
+  width: 100%;
+  color: var(--ink-weak-on);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  border-bottom: 1px solid var(--greys-grey-20);
+  background: transparent;
+}
+
+.contextMenuItem:hover {
+  background: var(--background-weak);
+}
+
+.contextMenuItem.disabled {
+  color: var(--ink-disabled-on);
+}
+
+.contextMenuItem.disabled:hover {
+  background: none;
+}

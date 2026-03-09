@@ -1,0 +1,52 @@
+.cardOT {
+  background: var(--ink-inverse);
+  border: 1px solid var(--greys-grey-20);
+  border-radius: 8px;
+  box-shadow: 0.3px 0.3px 4px 0px rgba(28, 17, 96, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 8px 15px 8px 8px;
+}
+
+.title {
+  color: var(--ink-strong);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.otInfoRow {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+.rowTitle {
+  min-width: 70px;
+}
+
+.dateTimeContainer {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.datePickerContainer {
+  min-width: 185px;
+}
+
+.timePickerContainer {
+  min-width: 185px;
+}
+
+.inputActive {
+  border: 1px solid var(--background-accent) !important;
+  box-shadow: none !important;
+}
+
+.classificationDropdown {
+  margin-top: 8px;
+  width: 100%;
+}

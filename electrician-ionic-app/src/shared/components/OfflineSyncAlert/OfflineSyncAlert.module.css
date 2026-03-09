@@ -1,0 +1,52 @@
+.iconContainer {
+  background: --greys-grey-20;
+  border-radius: 50%;
+  display: grid;
+  height: 64px;
+  margin: 46px auto 16px;
+  place-items: center;
+  width: 64px;
+}
+
+.modal {
+  --background: var(--background-standard);
+  --border-radius: 24px;
+  --height: fit-content;
+  --width: 100%;
+  padding: 16px;
+}
+
+.modalBody {
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 16px;
+  display: block;
+}
+
+.description {
+  margin-bottom: 24px;
+  display: block;
+}
+
+.buttonClose {
+  background: var(--background-weak);
+  border-radius: 50%;
+  height: 24px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 24px;
+}
+
+.buttonCloseIcon {
+  color: --ink-strong;
+  font-size: 16px;
+}
+
+.button {
+  width: 100%;
+}

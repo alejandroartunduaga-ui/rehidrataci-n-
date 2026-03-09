@@ -1,0 +1,92 @@
+.card {
+  background: var(--background-standard);
+  border-radius: 16px;
+  box-shadow:
+    0px 0px 1px 0px rgba(28, 17, 96, 0.25),
+    0px 3px 8px 0px rgba(8, 8, 10, 0.05);
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.itemGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.title {
+  color: var(--ink-standard);
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.tagContainer {
+  flex-shrink: 0;
+}
+
+.progressContainer {
+  width: 100%;
+}
+
+.progressBar {
+  margin: 0;
+}
+
+/* Sobrescribir estilos del BiaProgressBar para que coincida con el diseño */
+.progressBar :global(.progressBarContainer) {
+  margin: 0;
+}
+
+.progressBar :global(.customProgressBar) {
+  --progress-background: var(--greys-grey-20) !important ;
+  --buffer-background: var(--greys-grey-20) !important;
+  height: 8px;
+  border-radius: 8px;
+  --background: var(--greys-grey-20) !important;
+}
+
+.progressBar :global(.customProgressBar.primary) {
+  --progress-background: var(--background-accent);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .content {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .heading {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}

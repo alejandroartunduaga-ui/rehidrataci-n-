@@ -1,0 +1,56 @@
+.menu {
+  --background: var(--background-standard);
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+}
+
+.toolbar_menu {
+  --background: var(--background-standard);
+  --padding-top: 64px;
+  border-bottom: 1px solid var(--greys-grey-20);
+  margin: 0px 16px;
+  padding-bottom: 16px;
+  width: calc(100% - 32px);
+}
+
+.info_user {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.container_items {
+  padding: 5px 15px 0 5px;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  width: 68%;
+}
+
+.close {
+  align-items: center;
+  background: var(--greys-grey-20);
+  border-radius: 50%;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+.version {
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  left: 24px;
+  position: absolute;
+  width: 100%;
+}

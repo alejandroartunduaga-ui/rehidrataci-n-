@@ -1,0 +1,123 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7px;
+}
+
+.labelText {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.customInput {
+  border: 1px solid var(--border-standard);
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px 0px rgba(227, 227, 233, 0.25);
+  caret-color: auto;
+  color: var(--ink-strong);
+  font-size: 14px;
+  font-weight: 400;
+  height: 48px;
+  width: 100%;
+  --padding-bottom: 12px;
+  --padding-end: 12px;
+  --padding-start: 12px;
+  --padding-top: 12px;
+  --highlight-color-focused: var(--background-accent);
+  --highlight-height: 0px;
+}
+
+.customInput:readonly,
+.customInput[readonly],
+.customInput:disabled,
+.customInput[disabled] {
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+.focused {
+  border: 1px solid var(--background-accent);
+}
+
+.inputWrapper {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.disabledWrapper {
+  cursor: not-allowed !important;
+}
+
+.disabledWrapper * {
+  cursor: not-allowed !important;
+}
+
+.disabledWrapper .customInput {
+  opacity: 0.6 !important;
+  background: var(--background-weak) !important;
+}
+
+.passwordIcon {
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+}
+
+.error {
+  border-color: var(--ink-error) !important;
+}
+
+.passwordToggleBtn {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 12px;
+  z-index: 10;
+}
+
+.passwordToggleBtn:focus {
+  outline: none;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.clearButton {
+  border: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink-weak-on);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  color: var(--ink-inverse);
+}
+
+.helperText {
+  margin-top: 0px;
+  font-size: 10px !important;
+}
+
+@media (min-width: 768px) {
+  .customInput {
+    border-radius: 8px;
+    font-size: 12px;
+    min-height: 32px;
+    height: 32px;
+    --padding-bottom: 8px;
+    --padding-top: 8px;
+  }
+}

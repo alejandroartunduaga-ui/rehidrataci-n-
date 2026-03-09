@@ -1,0 +1,64 @@
+.filedWrapper {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--border-standard);
+  width: 100%;
+}
+
+.pin {
+  display: inline-flex;
+  margin-left: 12px;
+  padding: 4px 16px;
+  border-radius: 16px;
+}
+
+.multiple_line_label_with_icon {
+  display: flex;
+  align-items: center;
+}
+
+.multiple_line_label_with_icon img {
+  width: auto;
+  height: 30px;
+  margin-right: 12px;
+}
+
+.multiple_line_label_with_icon .textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mapFiledWrapper {
+  margin-top: 32px;
+}
+
+.previewButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.previewButtonLeft {
+  display: flex;
+  align-items: center;
+}
+
+.previewButtonLeft img {
+  height: 30px;
+  margin-right: 8px;
+}
+
+.scopeWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.equipmentsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}

@@ -1,0 +1,7 @@
+.containerToolbar {
+  --background: var(--background-standard);
+  --border-color: var(--border-standard);
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+}

@@ -1,0 +1,47 @@
+.container {
+  height: calc(100dvh - 56px);
+  overflow: auto;
+  padding: 24px 16px 122px;
+}
+
+.statusStep {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+.inProgress {
+  background-color: var(--greys-grey-20);
+  color: var(--ink-accent);
+}
+
+.completed {
+  background-color: var(--chart-green05);
+  color: var(--chart-green02);
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.containerButtonFloat {
+  bottom: 0px;
+  padding: 16px;
+  right: 0;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px -2px 4px 0px #e4e5e740;
+}
+
+.button {
+  width: 100%;
+}
+
+.loader {
+  background: var(--surface-overlay);
+}

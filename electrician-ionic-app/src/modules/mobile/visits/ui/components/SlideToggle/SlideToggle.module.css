@@ -1,0 +1,47 @@
+.wrapper {
+  padding: 4px;
+  border-radius: 24px;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  height: 40px;
+}
+
+.rightComponent {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 7px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-weak);
+  color: var(--ink-strong);
+}
+
+.leftComponent {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.draggable {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

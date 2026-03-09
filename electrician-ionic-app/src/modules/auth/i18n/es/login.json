@@ -1,0 +1,22 @@
+{
+  "username": "Correo electrónico",
+  "password": "Contraseña",
+  "login_loading": "Iniciando sesión",
+  "login_title": "Inicia sesión",
+  "login": "Iniciar sesión",
+  "password_required": "La contraseña es requerida",
+  "user_required": "El usuario es requerido",
+  "forgot_password": "¿Olvidaste tu contraseña?",
+  "user_invalid": "Ingresa un correo válido",
+  "title_error_login": "Usuario o contraseña incorrectos.",
+  "description_error_login": "Verifica tus datos e inténtalo de nuevo.",
+  "reset_password": "Restablecer contraseña",
+  "cancel": "Cancelar",
+  "title_error": "Hubo un error.",
+  "description_error": "Inténtalo nuevamente.",
+  "loader_forgot": "Procesando tu solicitud",
+  "modal_forgot_text": "Hemos enviado un correo electrónico de recuperación de contraseña",
+  "check_in": "Revisa en: ",
+  "understood": "Entendido",
+  "mail_not_found": "El correo electrónico no está registrado."
+}

@@ -1,0 +1,24 @@
+.signatureContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.labelText {
+  margin-bottom: 4px;
+}
+
+.signatureCanvas {
+  border: 1px solid var(--border-standard);
+  border-radius: 4px;
+  background: var(--background-standard);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  width: 100%;
+}

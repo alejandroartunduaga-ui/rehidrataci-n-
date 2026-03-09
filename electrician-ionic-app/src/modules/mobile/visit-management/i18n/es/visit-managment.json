@@ -1,0 +1,13 @@
+{
+  "title": "Acta",
+  "sections": "Secciones",
+  "generate_pdf": "Generar PDF",
+  "error_general": "Hubo un error, por favor intentalo nuevamente.",
+  "acta_already_exists": "Ya existe un acta para esta visita.",
+  "save_forms_success": "La acta se ha guardado exitosamente.",
+  "save_forms_error": "Hubo un error al guardar la acta, por favor intentalo nuevamente.",
+  "loading_pages": "Cargando páginas...",
+  "completed_offline_message": "✅ Visita marcada como completada. Se sincronizará cuando tengas conexión.",
+  "title_no_network": "Pérdida de internet",
+  "message_no_network": "Falló la carga de la página. Por favor, verifica tu conexión y vuelve a intentarlo."
+}

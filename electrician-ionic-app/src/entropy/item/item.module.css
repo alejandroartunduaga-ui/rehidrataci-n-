@@ -1,0 +1,17 @@
+.wrapItem {
+  --background: var(--background-standard);
+  --border-color: var(--greys-grey-20);
+  --color: var(--ink-strong);
+  --detail-icon-font-size: 16px;
+  --detail-icon-opacity: 1;
+  --padding-start: 12px;
+  gap: 12px;
+}
+
+.contentItem {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-items: flex-start;
+}

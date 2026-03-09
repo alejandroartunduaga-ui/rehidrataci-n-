@@ -1,0 +1,31 @@
+.header {
+  background: var(--background-weak);
+}
+
+.container {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.loader {
+  background: var(--surface-overlay);
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.filedWrapper {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--border-standard);
+  width: 100%;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}

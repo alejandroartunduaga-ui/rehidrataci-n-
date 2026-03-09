@@ -1,0 +1,64 @@
+.modalBody {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  margin-top: -33px;
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  background: var(--background-weak);
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.tagBlack {
+  background: var(--surface-overlay-black);
+  border-radius: 12px;
+  padding: 4px 10px;
+  width: fit-content;
+}
+
+.rejectButton {
+  width: 100%;
+}
+
+.loader {
+  background: var(--surface-overlay);
+}
+
+.buttonClose {
+  align-self: flex-end;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  min-height: auto;
+  width: 32px;
+  --border-radius: 50%;
+  --background-activated: var(--greys-grey-20);
+  --background: var(--background-weak);
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-start: 0px;
+  --padding-end: 0px;
+}
+
+.buttonCloseIcon {
+  color: var(--ink-strong);
+}
+
+.modalGrid {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px;
+  padding: 16px;
+}

@@ -1,0 +1,123 @@
+.container_radio_group {
+  width: 100%;
+}
+
+.radio_item {
+  --padding-start: 0;
+  --border-color: #f0f1fa;
+  --min-height: 48px;
+  cursor: pointer;
+}
+
+.radio_item:hover {
+  --background: var(--background-weak);
+}
+
+.radio_item:active {
+  --background: var(--background-weak);
+}
+
+.radio {
+  --color: var(--ink-weak);
+  --color-checked: var(--ink-accent);
+  --border-radius: 50%;
+  --border-width: 2px;
+  --border-style: solid;
+  --border-color: var(--ink-weak);
+  --checkmark-color: var(--ink-accent);
+  --checkmark-width: 8px;
+  --checkmark-height: 8px;
+  margin-inline-end: 16px;
+  width: 20px;
+  height: 20px;
+}
+
+.radio.radio-checked {
+  --border-color: var(--ink-accent);
+}
+
+/* Fix específico para iOS */
+ion-radio::part(container) {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color, var(--ink-weak));
+}
+
+/* Estado no marcado - ocultar mark */
+ion-radio::part(mark) {
+  background: var(--ink-accent);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+/* Estado marcado - mostrar mark y cambiar borde */
+ion-radio[aria-checked='true']::part(container) {
+  border-color: var(--ink-accent);
+}
+
+ion-radio[aria-checked='true']::part(mark) {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Asegurar que el label se vea correctamente */
+.radio_item ion-label {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  flex: 1;
+}
+
+/* Fix adicional para iOS - Forzar forma circular */
+@supports (-webkit-touch-callout: none) {
+  /* Solo aplicar en iOS/Safari */
+  ion-radio {
+    --border-radius: 50% !important;
+    border-radius: 50% !important;
+  }
+
+  ion-radio::part(container) {
+    border-radius: 50% !important;
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid var(--ink-weak) !important;
+  }
+
+  ion-radio::part(mark) {
+    border-radius: 50% !important;
+    width: 8px !important;
+    height: 8px !important;
+    background: var(--ink-accent) !important;
+    transform: scale(0) !important;
+    opacity: 0 !important;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease !important;
+  }
+
+  ion-radio[aria-checked='true']::part(container) {
+    border-color: var(--ink-accent) !important;
+  }
+
+  ion-radio[aria-checked='true']::part(mark) {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Fix para prevenir el problema de "barra" en iOS */
+.radio_item {
+  --inner-padding-end: 0;
+  --padding-end: 0;
+}
+
+.radio_item ion-radio {
+  margin-inline-end: 16px;
+  margin-inline-start: 0;
+}

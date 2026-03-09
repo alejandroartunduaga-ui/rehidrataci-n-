@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Open Sauce';
+  src: url('../../assets/fonts/Open Sauce Fonts/OpenSauceOne-Regular.ttf')
+    format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open Sauce';
+  src: url('../../assets/fonts/Open Sauce Fonts/OpenSauceOne-SemiBold.ttf')
+    format('truetype');
+  font-weight: 600;
+}
+
+:root {
+  --font-heading-weight: 600;
+  --font-body-weight: 400;
+  --ion-font-family: 'Open Sauce', sans-serif !important;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.ion-color-light {
+  --ion-color-contrast: var(--ink-weak) !important;
+  --ion-color-contrast-rgb: var(--chart-purple07) !important;
+  --ion-color-shade: var(--chart-purple05, #d7d8da) !important;
+  --ion-color-tint: var(--chart-purple07, #f5f6f9) !important;
+}

@@ -1,0 +1,104 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  align-items: center;
+  background: var(--background-standard);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  color: var(--ink-standard);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  gap: 8px;
+  height: 32px;
+  justify-content: space-between;
+  padding: 8px;
+  width: 100%;
+}
+
+.selectedDate {
+  color: var(--ink-weak-on);
+  flex: 1;
+  text-align: left;
+}
+
+.calendar {
+  background: var(--ink-inverse);
+  border: 0.886px solid var(--border-standard);
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 8px 0px rgba(28, 17, 96, 0.15);
+  color: var(--ink-standard);
+  font-size: 12.4px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 12px !important;
+  left: 0;
+  margin-top: 4px;
+  min-height: 308px;
+  min-width: 252px;
+  padding-top: 16px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
+}
+
+.rdp {
+  --rdp-accent-color: var(--background-accent);
+  --rdp-background-color: var(--ink-standard);
+  --rdp-outline: 1px solid var(--background-accent);
+  --rdp-selected-color: #fff;
+  --rdp-selected-bg: var(--background-accent);
+  --rdp-today-bg: var(--background-weak);
+  --rdp-range-bg: var(--chart-purple05);
+  --rdp-cell-size: 24px;
+}
+
+.rdp-day,
+.rdp-cell {
+  height: 24px !important;
+  margin: 0 4px 4px 0 !important;
+  max-height: 24px !important;
+  max-width: 24px !important;
+  min-height: 24px !important;
+  min-width: 24px !important;
+  width: 24px !important;
+}
+
+.rdp-day {
+  border: none;
+  border-radius: 8px !important;
+  color: var(--ink-standard);
+  font-weight: 400;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.today {
+  background: #fff !important;
+  border: 1px solid var(--background-accent) !important;
+  border-radius: 8px !important;
+  color: var(--background-accent) !important;
+}
+
+.rdp-day_selected {
+  background: var(--background-accent) !important;
+  border: 1px solid var(--background-accent) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+}
+
+.rdp-day_disabled {
+  background: transparent !important;
+  color: var(--ink-weak-on) !important;
+  cursor: not-allowed !important;
+}
+
+.inputActive {
+  border: 1px solid var(--border-accent) !important;
+  box-shadow: none !important;
+}

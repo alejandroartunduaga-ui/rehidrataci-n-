@@ -1,0 +1,8 @@
+node_modules
+build
+dist
+public
+dev-dist
+
+# testing
+/coverage

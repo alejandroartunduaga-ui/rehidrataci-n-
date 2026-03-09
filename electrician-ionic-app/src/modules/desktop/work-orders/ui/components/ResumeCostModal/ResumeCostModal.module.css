@@ -1,0 +1,36 @@
+.resumeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 4px 0;
+}
+
+.description {
+  color: var(--ink-weak);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.costsList {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.costRow {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0px;
+}
+
+.costRow:last-child {
+  border-bottom: 1px solid var(--greys-grey-20);
+}
+
+.totalSection {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}

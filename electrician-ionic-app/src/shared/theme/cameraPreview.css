@@ -1,0 +1,9 @@
+.barcode-scanner-active :has(video#video) {
+  overflow: hidden;
+  height: calc(100vh - 55px) !important;
+  top: 56px !important;
+}
+
+.barcode-scanner-active video#video {
+  --background: transparent !important;
+}

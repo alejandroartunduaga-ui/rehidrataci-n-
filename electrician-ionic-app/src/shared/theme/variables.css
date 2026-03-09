@@ -1,0 +1,120 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+
+ion-content,
+ion-header,
+ion-footer {
+  --background: var(--background-standard) !important;
+}
+
+body {
+  background: var(--background-standard) !important;
+  font-family: var(--font-family) !important;
+}
+
+ion-button {
+  --background: var(--background-accent);
+  --box-shadow: none;
+  --border-radius: 16px;
+  --color: var(--ink-inverse);
+  min-height: 48px;
+  opacity: 1;
+  text-transform: none;
+}
+
+ion-button[disabled] {
+  --background: var(--greys-grey-20);
+  --color: var(--ink-disabled);
+  opacity: 1;
+}
+
+ion-back-button {
+  --color: var(--ink-strong);
+}
+
+ion-menu-button {
+  --color: var(--ink-strong);
+}
+
+/* Hide Google Maps elements */
+a[href^="https://maps.google.com/maps"]
+{
+  display: none !important;
+}
+
+div.gm-style > div:nth-child(16) > div {
+  display: none !important;
+}
+
+ion-action-sheet {
+  --button-background-activated: var(--ink-disabled) !important;
+  --button-background: var(--background-standard) !important;
+  --button-background-selected: var(--ink-disabled) !important;
+  --button-color: var(--ink-strong) !important;
+  font-weight: normal;
+}
+
+ion-action-sheet .action-sheet-button {
+  font-size: 16px !important;
+}
+
+/* Date Range Picker */
+.rdp-caption {
+  padding: 4px !important;
+  margin-bottom: 22px;
+}
+
+.rdp {
+  --rdp-cell-size: 24px;
+}
+
+.rdp-day,
+.rdp-cell {
+  margin: 4px !important;
+}
+
+.rdp-caption_label,
+.rdp-nav {
+  font-size: 12.4px !important;
+  font-weight: 400 !important;
+  color: var(--ink-standard) !important;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+}
+
+.rdp-head_cell {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: var(--ink-standard) !important;
+  letter-spacing: 0.01em;
+  padding-bottom: 15px !important;
+  text-transform: capitalize;
+}
+
+::-webkit-scrollbar {
+  background: #f7f8fa;
+  border-radius: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bfc3d4;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a4b8;
+}
+
+/* Fix z-index for modals that need to be above other elements */
+ion-modal.add-photo-modal {
+  z-index: 10000 !important;
+}
+
+ion-modal.add-photo-modal::part(backdrop) {
+  z-index: 9999 !important;
+}
+
+ion-modal.add-photo-modal::part(content) {
+  z-index: 10000 !important;
+}

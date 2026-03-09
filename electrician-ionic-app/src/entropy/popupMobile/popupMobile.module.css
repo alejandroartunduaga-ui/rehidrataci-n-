@@ -1,0 +1,73 @@
+.popupMobile {
+  --width: 85%;
+  --border-radius: 1.5rem;
+  --height: fit-content;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  --backdrop-opacity: var(--ion-backdrop-opacity, 0.5);
+}
+
+.container {
+  background: var(--background-standard);
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0px 2px 4px 0px rgba(228, 229, 231, 0.25);
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: var(--greys-grey-20);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--greys-grey-20, #f0f1fa);
+}
+
+.title {
+  text-align: center;
+}
+
+.message {
+  text-align: center;
+  color: var(--ink-weak, #5d607e);
+}
+
+.button {
+  width: 100%;
+  height: 48px;
+  background: var(--background-accent, #472bef);
+  color: var(--ink-inverse, #ffffff);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonSecondary {
+  width: 100%;
+  height: 48px;
+  background: var(--background-weak, #f0f1fa);
+  color: var(--background-accent, #472bef);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

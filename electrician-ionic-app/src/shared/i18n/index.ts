@@ -1,0 +1,10 @@
+export { default as i18n } from './i18n';
+export * from './namespaces.enum';
+export { default as esGlobal } from './es/global.json';
+export { default as esLogin } from '@auth/i18n/es/login.json';
+export { default as esVisits } from '@visits/i18n/es/visits.json';
+export { default as esVisitManagement } from '@visit-management/i18n/es/visit-managment.json';
+export { default as esFormsManagement } from '@forms-management/i18n/es/forms-management.json';
+export { default as esWorkOrders } from '@work-orders/i18n/es/work-orders.json';
+export { default as esTechnicalLifeSheet } from '@hv/technical-life-sheet/i18n/es/technical-life-sheet.json';
+export { default as esScopes } from '@hv/scopes/i18n/es/scopes.json';

@@ -1,0 +1,4 @@
+.titleContainer {
+  border-bottom: 1px solid var(--greys-grey-20);
+  padding: 25px;
+}

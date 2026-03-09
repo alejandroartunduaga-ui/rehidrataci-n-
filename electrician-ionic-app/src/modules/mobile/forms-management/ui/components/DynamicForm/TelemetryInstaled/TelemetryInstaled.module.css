@@ -1,0 +1,146 @@
+.content {
+  --padding-top: 24px;
+  --padding-start: 16px;
+  --padding-bottom: 120px;
+  --padding-end: 16px;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tagContainer {
+  display: flex;
+}
+
+.description {
+  color: var(--ink-weak);
+}
+
+.itemsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.toast {
+  background: var(--chart-orange05);
+  border: 1px solid var(--chart-orange01);
+  border-radius: 1rem;
+  padding: 10px 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.toastIcon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: var(--orange-50);
+  font-size: 22px;
+}
+
+.toastText {
+  color: var(--ink-standard);
+}
+
+.phasorItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  border-bottom: 0.5px solid var(--border-standard);
+}
+
+.phasorIcon,
+.phasorChevron {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-strong);
+}
+
+.phasorTitle {
+  flex: 1;
+  color: var(--ink-standard);
+}
+
+.itemRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer {
+  padding: 16px;
+  border-top: 0.5px solid var(--border-standard);
+  background: var(--background-standard);
+  box-shadow: -2px -2px 4px 0 rgba(228, 229, 231, 0.25);
+}
+
+.failedDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.failedDescriptionList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.failedDescriptionItem {
+  padding: 10px 0;
+}
+
+.failedDescriptionCheckbox {
+  margin: 0;
+  font-weight: 600;
+}
+
+.failedMessage {
+  background: var(--chart-red05);
+  border: 1px solid var(--chart-red01);
+  border-radius: 1rem;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.failedMessageIcon {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  color: var(--ink-error);
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.failedMessageContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.failedMessageTitle {
+  color: var(--ink-error);
+  margin: 0;
+}
+
+.failedMessageText {
+  color: var(--ink-weak);
+  margin: 0;
+  line-height: 1.4;
+}

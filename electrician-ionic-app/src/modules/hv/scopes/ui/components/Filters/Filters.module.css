@@ -1,0 +1,21 @@
+.filtersContainer {
+  align-items: center;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 2fr 1fr 1fr;
+  width: 100%;
+  padding: 0 25px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.filterInputContainer {
+  margin-bottom: 0px !important;
+}
+
+.filterInput {
+  flex: 1 1 0%;
+  min-width: 0 !important;
+  width: 100% !important;
+  margin-bottom: 0px !important;
+}

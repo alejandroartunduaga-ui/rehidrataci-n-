@@ -1,0 +1,179 @@
+.loader {
+  background: var(--surface-overlay);
+}
+
+.subHeader {
+  background: var(--background-standard);
+  border-bottom: 1px solid var(--greys-grey-20);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.categoriesWrapper {
+  display: flex;
+  gap: 2px;
+  padding: 24px 16px 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.categoriesWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.search {
+  --background: var(--background-standard);
+  --border-radius: 8px;
+  --box-shadow: 0px 3px 8px rgba(8, 8, 10, 0.05);
+  --clear-button-color: var(--ink-accent);
+  --color: var(--ink-strong);
+  --icon-color: var(--ink-accent);
+  --placeholder-color: var(--ink-disabled);
+  padding: 0px;
+}
+
+.buttonSort {
+  background-color: var(--background-accent);
+  border-radius: 8px;
+  border: none;
+  display: grid;
+  height: 42px;
+  padding: 12px;
+  place-items: center;
+}
+
+.filtersWrapper {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+}
+
+.visitsWrapper {
+  padding: 24px 16px;
+}
+
+.dataActivity {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.badgeStatus {
+  border-radius: 16px 0 16px 0px;
+  margin-left: -16px;
+  margin-top: -16px;
+  padding: 4px 16px;
+  width: fit-content;
+}
+
+.iconWrapper {
+  background: var(--greys-grey-20);
+  border-radius: 50%;
+  display: grid;
+  height: 32px;
+  place-items: center;
+  position: absolute;
+  right: 16px;
+  top: 32px;
+  width: 32px;
+}
+
+.icon {
+  color: var(--ink-strong);
+  font-size: 16px;
+}
+
+.containerButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.containerButtons ion-button {
+  min-height: 36px !important;
+  width: 100%;
+}
+
+.rejectButton {
+  --background-activated: var(----background-standard);
+  --background: var(----background-standard);
+  --border-color: var(--ink-accent);
+  --border-style: solid;
+  --border-width: 1px;
+  --color: var(--ink-accent);
+}
+
+.offlineAlert {
+  margin: 0px 0px 24px;
+}
+
+.buttonDownload {
+  background: var(--greys-grey-20);
+  border-radius: 50%;
+  bottom: 16px;
+  display: grid;
+  height: 32px;
+  place-items: center;
+  position: absolute;
+  right: 16px;
+  width: 32px;
+  transition: all 0.2s ease;
+}
+
+.buttonDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--greys-grey-10) !important;
+  pointer-events: none;
+}
+
+.iconDownload {
+  font-size: 16px;
+}
+
+.iconSuccess {
+  bottom: 16px;
+  height: 25px;
+  position: absolute;
+  right: 16px;
+}
+
+.footerSync {
+  box-shadow: -2px -2px 4px 0px #e4e5e740;
+  padding: 16px;
+}
+
+.syncButton {
+  width: 100%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.iconRotate {
+  animation: rotate 1s linear infinite;
+  bottom: 16px;
+  position: absolute;
+  right: 16px;
+}

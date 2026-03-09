@@ -1,0 +1,279 @@
+.containerToolbar {
+  --background: var(--background-standard);
+  --border-color: var(--border-standard);
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.content {
+  --padding-top: 24px;
+  --padding-start: 16px;
+  --padding-bottom: 120px;
+  --padding-end: 16px;
+  width: 100%;
+}
+
+.title_section {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.button {
+  width: 100%;
+}
+
+.containerButtonFloat {
+  background-color: var(--background-standard);
+  bottom: 0px;
+  padding: 16px 16px 16px 16px;
+  right: 0;
+  width: 100%;
+}
+
+.btn_add {
+  --background: var(----background-standard);
+  --background-activated: var(----background-standard);
+  --color: var(--ink-accent);
+  --border-color: var(--ink-accent);
+  margin-top: 12px;
+}
+
+.icon_add {
+  margin-right: 8px;
+}
+
+.wrap_photos {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  height: 150px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  position: relative;
+  scrollbar-width: thin;
+}
+
+.btn_camera {
+  align-items: center;
+  background-color: var(--background-standard);
+  border: 1px dashed var(--ink-strong);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  height: 120px;
+  justify-content: center;
+  margin-bottom: 16px;
+  width: 90px;
+}
+
+.photo_thumbnail {
+  border-radius: 8px;
+  height: 120px;
+  margin: 5px;
+  object-fit: cover;
+  width: 90px;
+}
+
+.wrap_opt_camera {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  width: 100%;
+  padding-top: 32px;
+}
+
+.wrap_opt {
+  align-items: center;
+  background-color: var(--background-standard);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.thrash {
+  background-color: var(--background-standard);
+  height: 20px;
+  position: relative;
+  right: -75px;
+  top: 15px;
+  width: 20px;
+}
+
+.wrap_transformers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.btn_transformer {
+  background-color: var(----background-standard);
+}
+
+.wrap_only_transformer {
+  align-items: center;
+  border: 1px solid var(--ink-accent);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  margin-bottom: 12px;
+}
+
+.wrap_close {
+  align-items: center;
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.content_close {
+  align-items: center;
+  background-color: var(--ink-accent);
+  border-radius: 50%;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding: 4px;
+  width: 40px;
+}
+
+.caption {
+  margin-bottom: 24px;
+}
+
+.containerPhotos {
+  /* margin-top: 24px; */
+}
+
+.radio_group_accordion {
+  padding: 0 0;
+  white-space: normal;
+}
+
+.accordion_header {
+  margin-left: -15px;
+  margin-right: -15px;
+  border-bottom: 1px solid var(--greys-grey-20);
+  font-size: 12px;
+}
+
+.accordion_group {
+  margin-bottom: 10px;
+}
+
+.accordion_header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.accordion_content {
+  padding: 0;
+}
+
+.accordion_content ion-item {
+  color: var(--ink-weak);
+}
+
+.icon_check {
+  background-color: var(--chart-green02);
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+}
+
+/* === ELIMINAR ESTILOS PERSONALIZADOS PARA .button === */
+/* Ya no definimos estilos aquí, confiamos en los defaults de Ionic */
+/* 
+.containerButtonFloat ion-button.button {
+  width: 100%;
+  --background: var(--ion-color-primary);
+  ...
+}
+
+.containerButtonFloat ion-button.button[disabled],
+.containerButtonFloat ion-button.button:disabled {
+  --background: var(--ion-color-medium);
+  ...
+}
+*/
+/* =============================================== */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerButtonClose {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  z-index: 10;
+}
+
+.button_close {
+  --border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
+  min-height: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  margin: 12px auto 85px;
+  width: 90%;
+}
+
+.footerModal {
+  margin: 12px auto 85px;
+  box-shadow: none;
+}
+
+.textWrap {
+  white-space: normal;
+}
+
+.loader {
+  background: var(--surface-overlay);
+}
+
+.containerPhotosHeader {
+  margin-bottom: 10px;
+}
+
+.textMaxPhotos {
+  font-size: 12px !important;
+}
+
+.offlineAlert {
+  margin-bottom: 16px;
+}
+
+.telemetry_description {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.headerBuilderModal {
+  webkit-box-shadow:
+    0 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}

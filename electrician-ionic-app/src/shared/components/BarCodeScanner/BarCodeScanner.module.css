@@ -1,0 +1,166 @@
+/* Modal styles */
+.modal {
+  --width: 100%;
+  --height: 100%;
+}
+
+.content {
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeButton {
+  --color: var(--ink-standard);
+}
+
+/* Center content layout */
+.centerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Icon container */
+.iconContainer {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--background-weak);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+/* Text styles */
+.title {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* Button styles */
+.permissionButton {
+  --background: var(--background-weak) !important;
+  --color: var(--ink-accent) !important;
+  --border-color: var(--background-accent) !important;
+  --border-style: solid;
+  --background-activated: var(--background-weak) !important;
+  --background-hover: var(--background-weak) !important;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.cancelButton {
+  --border-color: var(--background-accent);
+  --color: var(--ink-accent);
+  --border-radius: 12px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* Scanner specific cancel button */
+.scannerControls .cancelButton {
+  --background: rgba(255, 255, 255, 0.9);
+  --color: var(--ink-standard);
+  --border-radius: 24px;
+  padding: 12px 24px;
+  width: auto;
+  margin-top: 0;
+}
+
+/* Error container */
+.errorContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--chart-red05);
+  border: 1px solid var(--chart-red01);
+  border-radius: 12px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+/* Spinning animation */
+.spinningIcon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Container principal durante el escaneo */
+.scanningContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Contenedor de video para QuaggaJS */
+.videoContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Estilos para el video que QuaggaJS creará automáticamente */
+.videoContainer video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Estilos para el canvas overlay de QuaggaJS */
+.videoContainer canvas {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Container para la tarjeta del equipo */
+.equipmentCardContainer {
+  padding: 16px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  margin: 16px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}

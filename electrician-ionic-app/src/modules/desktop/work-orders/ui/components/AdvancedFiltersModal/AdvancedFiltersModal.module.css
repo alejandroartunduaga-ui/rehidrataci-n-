@@ -1,0 +1,231 @@
+.advancedFiltersContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.advancedFiltersLayout {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  background: var(--greys-grey-10);
+  border-right: 1px solid var(--greys-grey-20);
+  display: flex;
+  flex-direction: column;
+  padding: 0px 16px 16px 0px;
+  width: 149px;
+}
+
+.sidebarItem {
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: var(--ink-standard-on);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  height: 32px;
+  line-height: 24px;
+  padding: 16px 12px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.sidebarItemActive {
+  background: var(--background-weak);
+  border-radius: 8px;
+  color: var(--ink-accent);
+  composes: sidebarItem;
+  font-weight: 500;
+}
+
+.contentSection {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0px 0px 16px 16px;
+}
+
+.searchInput {
+  margin-bottom: 16px;
+}
+
+.typesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.typeCheckbox {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  font-weight: 400;
+  gap: 12px;
+  position: relative;
+}
+
+.typeCheckbox input[type='checkbox'] {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+.checkboxCustom {
+  background: var(--ink-inverse);
+  border: 2px solid var(--border-standard);
+  border-radius: 4px;
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  transition:
+    border 0.15s,
+    background 0.15s;
+  width: 18px;
+}
+
+.typeCheckbox input[type='checkbox']:checked + .checkboxCustom {
+  background: var(--background-accent);
+  border-color: var(--background-accent);
+}
+
+.typeCheckbox input[type='checkbox']:checked + .checkboxCustom:after {
+  border: solid var(--ink-inverse);
+  border-width: 0 2px 2px 0;
+  content: '';
+  height: 11px;
+  left: 4px;
+  position: absolute;
+  top: 1px;
+  transform: rotate(45deg);
+  width: 6px;
+}
+
+.typeLabel {
+  color: var(--ink-standard);
+  flex: 1;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.openDropdownListContainer {
+  margin-top: 16px;
+  width: 100%;
+}
+.openDropdownSearchBox {
+  align-items: center;
+  border-bottom: 1px solid var(--greys-grey-20);
+  display: flex;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+.openDropdownSearchInput {
+  background: transparent;
+  border: none;
+  color: var(--ink-weak);
+  font-size: 13px;
+  outline: none;
+  padding: 8px 0;
+  width: 100%;
+}
+.openDropdownClearSearchBtn {
+  align-items: center;
+  background: var(--ink-weak);
+  border: none;
+  border-radius: 50%;
+  color: var(--ink-inverse);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  height: 16px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 0;
+  width: 16px;
+}
+.openDropdownOptionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.openDropdownOption {
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 12px;
+  padding: 6px 0;
+  position: relative;
+  transition: background 0.15s;
+}
+.openDropdownOption:hover {
+  background: var(--background-weak);
+}
+.openDropdownOption input[type='checkbox'] {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+.openDropdownCheckboxCustom {
+  background: var(--ink-inverse);
+  border: 2px solid var(--border-standard);
+  border-radius: 4px;
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  transition:
+    border 0.15s,
+    background 0.15s;
+  width: 18px;
+}
+.openDropdownOption
+  input[type='checkbox']:checked
+  + .openDropdownCheckboxCustom {
+  background: var(--background-accent);
+  border-color: var(--background-accent);
+}
+.openDropdownOption
+  input[type='checkbox']:checked
+  + .openDropdownCheckboxCustom:after {
+  border: solid var(--ink-inverse);
+  border-width: 0 2px 2px 0;
+  content: '';
+  height: 11px;
+  left: 4px;
+  position: absolute;
+  top: 1px;
+  transform: rotate(45deg);
+  width: 6px;
+}
+.openDropdownOptionLabel {
+  color: var(--ink-standard);
+  flex: 1;
+  font-size: 14px;
+  font-weight: 400;
+}
+.openDropdownNoOptions {
+  color: var(--ink-standard-on);
+  font-size: 13px;
+  padding: 16px;
+  text-align: center;
+}

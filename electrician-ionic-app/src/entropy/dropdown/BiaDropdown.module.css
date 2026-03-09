@@ -1,0 +1,153 @@
+.dropdownContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+  position: relative;
+  width: 228px;
+}
+
+.labelText {
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.input {
+  align-items: center;
+  background: var(--ink-inverse);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px 0px rgba(227, 227, 233, 0.25);
+  color: var(--ink-standard);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  font-weight: 400;
+  height: 32px;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0 16px;
+  transition: border 0.2s;
+  width: 100%;
+}
+.inputActive {
+  border: 1px solid var(--background-accent);
+}
+.inputPlaceholder {
+  color: var(--ink-weak-on);
+  font-size: 12px;
+  font-weight: 400;
+}
+.inputValue {
+  color: var(--ink-standard);
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+}
+.dropdownMenu {
+  background: var(--ink-inverse);
+  border: 1px solid var(--border-standard);
+  border-radius: 8px;
+  box-shadow: 0.5px 0.8px 8px 0px rgba(28, 17, 96, 0.15);
+  padding: 0;
+  z-index: 10000;
+}
+.searchBox {
+  align-items: center;
+  border-bottom: 1px solid var(--greys-grey-20);
+  display: flex;
+  height: 40px;
+  padding: 12px;
+}
+.searchInput {
+  background: transparent;
+  border: none;
+  color: var(--ink-weak);
+  font-size: 12px;
+  margin-left: 8px;
+  outline: none;
+  padding: 8px 0;
+  width: 100%;
+}
+.clearSearchBtn {
+  align-items: center;
+  background: var(--ink-weak);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 12px;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 0;
+  width: 12px;
+}
+
+.optionsList {
+  margin-top: 4px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.option {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--ink-standard-on);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  padding: 8px 16px;
+  text-align: left;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  width: 100%;
+}
+.option:hover {
+  background: var(--background-weak);
+}
+.checkCircle {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  margin-right: 12px;
+}
+.optionLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+}
+.noOptions {
+  color: var(--ink-standard-on);
+  font-size: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.divider {
+  background: var(--greys-grey-20);
+  height: 1px;
+  margin: 0px;
+}
+.selectedSection {
+  padding-bottom: 8px;
+}
+.unselectedSection {
+  padding-top: 8px;
+}
+
+.singleOption {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.disabledOption {
+  color: var(--ink-weak-on);
+  cursor: not-allowed;
+  opacity: 0.6;
+}

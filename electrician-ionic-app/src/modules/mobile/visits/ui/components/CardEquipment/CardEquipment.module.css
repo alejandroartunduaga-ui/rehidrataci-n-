@@ -1,0 +1,123 @@
+.card {
+  background: var(--background-standard);
+  border-radius: 16px;
+  box-shadow:
+    0px 0px 1px 0px rgba(28, 17, 96, 0.25),
+    0px 3px 8px 0px rgba(8, 8, 10, 0.05);
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.statusTag {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.tag {
+  width: max-content;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 16px 16px 16px;
+  width: 100%;
+}
+
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.itemGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.detailLabel {
+  color: var(--ink-standard);
+  font-weight: 600;
+}
+
+.detailValue {
+  color: var(--ink-weak);
+  font-weight: 400;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.scanButton,
+.notFoundButton {
+  flex: 1;
+  --border-radius: 8px;
+  font-size: 14px;
+  min-height: 35px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+}
+
+.scanButton {
+  --background: var(--background-accent) !important;
+  --color: var(--ink-inverse) !important;
+  --background-activated: var(--background-accent) !important;
+  --background-hover: var(--background-accent) !important;
+}
+
+.scanButton:focus,
+.scanButton:hover {
+  --background: var(--background-accent) !important;
+}
+
+.notFoundButton {
+  --background: var(--background-weak) !important;
+  --color: var(--ink-accent) !important;
+  --border-color: var(--background-accent) !important;
+  --border-style: solid;
+  --background-activated: var(--background-weak) !important;
+  --background-hover: var(--background-weak) !important;
+}
+
+/* Estados hover y focus */
+.scanButton:hover:not(.button-disabled) {
+  --background: var(--background-accent);
+  opacity: 0.9;
+}
+
+.notFoundButton:hover:not(.button-disabled) {
+  --background: var(--background-weak);
+  opacity: 0.9;
+}
+
+/* Estado deshabilitado */
+.scanButton.button-disabled,
+.notFoundButton.button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

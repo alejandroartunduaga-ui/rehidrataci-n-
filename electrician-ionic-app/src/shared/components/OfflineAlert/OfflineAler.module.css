@@ -1,0 +1,13 @@
+.offlineBanner {
+  align-items: center;
+  background: var(--chart-orange05);
+  border-radius: 16px;
+  border: 1px solid var(--chart-orange01);
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+}
+
+.offlineTitle {
+  display: block;
+}

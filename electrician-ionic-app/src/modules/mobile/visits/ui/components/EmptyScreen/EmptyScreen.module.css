@@ -1,0 +1,27 @@
+.emptyScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100dvh - 240px);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.emptyScreenIconWrapper {
+  place-items: center;
+  display: grid;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  background: var(--greys-grey-20);
+  border-radius: 50%;
+}
+
+.emptyScreenTitle {
+  margin-bottom: 8px;
+}
+
+.emptyScreenText {
+  text-wrap: pretty;
+}

@@ -1,0 +1,178 @@
+.tableContainer {
+  margin-top: 16px;
+  overflow: auto;
+  scrollbar-color: #bfc3d4 #f7f8fa;
+  scrollbar-width: thin;
+  width: 100%;
+}
+
+.tableContainer::-webkit-scrollbar {
+  background: #f7f8fa;
+  border-radius: 8px;
+  width: 8px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  background: #bfc3d4;
+  border-radius: 8px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb:hover {
+  background: #a0a4b8;
+}
+
+.table {
+  background: var(--background-standard);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid var(--greys-grey-20);
+  padding: 8px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table th {
+  background: var(--background-standard);
+  color: var(--ink-standard);
+  font-size: 12px;
+  font-weight: 600;
+  position: relative;
+  z-index: 3;
+}
+
+.tableHeader th {
+  background-color: var(--background-standard);
+  position: sticky;
+  top: 0;
+}
+
+.table td {
+  color: var(--ink-weak);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.table tbody tr:hover {
+  background: var(--background-weak, #f7f8fa);
+}
+
+.table td,
+.table tr,
+.table tbody,
+.table {
+  overflow: visible !important;
+}
+
+.tableHeaderCell {
+  text-align: left;
+}
+
+.tableCell {
+  text-align: left;
+  align-content: flex-start;
+}
+
+.iconRow {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.ellipsisText {
+  cursor: pointer;
+  display: inline-block;
+  max-width: 160px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.ellipsisText:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tooltip {
+  background: var(--background-weak);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  color: var(--ink-weak-on);
+  font-size: 12px;
+  font-weight: 600;
+  left: 50%;
+  opacity: 0;
+  padding: 0px;
+  pointer-events: none;
+  position: absolute;
+  top: 120%;
+  transform: translateX(-50%);
+  transition: opacity 0.15s;
+  white-space: pre;
+  z-index: 10;
+}
+
+.emptyState {
+  align-items: center;
+  border-bottom: 1px solid var(--border-standard);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 8px 12px;
+}
+
+/* Resizer styles */
+.resizer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: col-resize;
+  user-select: none;
+  touch-action: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.resizer:hover {
+  opacity: 1;
+}
+
+.resizer.isResizing {
+  background: var(--background-accent);
+  opacity: 1;
+}
+
+.tableHeaderCell:hover .resizer {
+  opacity: 1;
+}
+
+.datePickerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dateTimeContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8px;
+}

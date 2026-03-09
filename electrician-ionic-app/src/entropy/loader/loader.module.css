@@ -1,0 +1,56 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(24, 28, 44, 0.7); /* Fondo oscuro con opacidad */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapLoader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: 16px;
+  width: auto;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.iconRotate {
+  animation: rotate 3.5s linear infinite;
+}
+
+.gifLoader {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-top: 12px;
+}
+
+.textWrapper {
+  white-space: pre-line;
+  text-align: center;
+  margin-bottom: 8px;
+}

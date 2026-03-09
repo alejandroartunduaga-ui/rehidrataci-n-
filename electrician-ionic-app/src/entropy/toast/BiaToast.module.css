@@ -1,0 +1,64 @@
+.toast-wrapper {
+  --border-radius: 8px;
+  backdrop-filter: blur(20px);
+  border: 1px solid;
+  height: 40px;
+  padding: 10px 16px;
+}
+
+.error {
+  --background: var(--chart-red05);
+  --border-color: var(--ink-error);
+  --border-width: 1px;
+  --border-style: solid;
+  --color: var(--ink-strong);
+}
+
+.warning {
+  --background: var(--chart-yellow05);
+  --border-color: var(--ink-warning);
+  --border-width: 1px;
+  --border-style: solid;
+  --color: var(--ink-strong);
+}
+
+ion-toast.warning::part(icon) {
+  color: var(--ink-warning);
+  font-size: 30px;
+}
+
+ion-toast.error::part(icon) {
+  color: var(--ink-error);
+  font-size: 30px;
+}
+
+.error::part(header) {
+  color: var(--ink-strong);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.warning::part(header) {
+  color: var(--ink-strong);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.error::part(message) {
+  color: var(--ink-standard);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.success {
+  --background: var(--chart-green05);
+  --border-color: var(--chart-green01);
+  --border-width: 1px;
+  --border-style: solid;
+  --color: var(--ink-strong);
+}
+
+ion-toast.success::part(icon) {
+  color: var(--chart-green01);
+  font-size: 20px;
+}
