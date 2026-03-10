@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { IonContent, IonPage } from '@ionic/react';
 import { BiaLoader, Header } from '@entropy/index';
@@ -7,7 +7,7 @@ import { IFormsMap } from '@mobile/forms-management/data/interfaces/formById.int
 import { DynamicForm } from '../components/DynamicForm/DynamicForm';
 import styles from './Forms.module.css';
 import { useIsFailedVisit } from '@shared/hooks/useQueryParams';
-
+import { useVisitDetail } from '@mobile/visits/data/hooks';
 interface RouteParams {
   activity_id: string;
   page_code: string;
@@ -27,6 +27,39 @@ export const FormsPage: React.FC = () => {
   const [formData, setFormData] = useState<IFormsMap | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
+
+  // ✅ Datos de la visita (incluye descriptions) y estado REVERT_ACT
+  const { isRevertAct, data: visitDetail } = useVisitDetail({
+    activity_id,
+  });
+
+  // ✅ initialValues solo para REVERT_ACT, usando descriptions como fuente
+  const initialValues = useMemo(() => {
+    if (!isRevertAct || !visitDetail) return undefined;
+
+    const values: Record<string, string> = {};
+
+    try {
+      // visitDetail.descriptions: IDescription[]
+      visitDetail.descriptions?.forEach((section) => {
+        section.fields?.forEach((field) => {
+          const selected =
+            field.selected_value && field.selected_value.length > 0
+              ? field.selected_value[0]
+              : '';
+
+          if (selected !== undefined && selected !== null) {
+            values[field.code] = String(selected);
+          }
+        });
+      });
+    } catch (e) {
+      // En caso de shape inesperado, no romper el flujo
+      return undefined;
+    }
+
+    return Object.keys(values).length > 0 ? values : undefined;
+  }, [isRevertAct, visitDetail]);
 
   // Ref para el formulario dinámico
   const formRef = useRef<{ submit: () => void; resetLoading: () => void }>(
@@ -96,6 +129,8 @@ export const FormsPage: React.FC = () => {
             formData={formData.dataForms}
             onSubmit={handleSubmit}
             submitButtonText='Guardar y continuar'
+            // Solo REVERT_ACT recibe initialValues; OTs normales siguen igual
+            initialValues={initialValues}
           />
         )}
       </IonContent>

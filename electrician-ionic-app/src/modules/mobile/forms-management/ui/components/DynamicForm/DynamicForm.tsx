@@ -89,6 +89,8 @@ interface DynamicFormProps {
   initialBuilderItems?: ITransformer[]; // Items de builder iniciales si existen
   hideButtons?: boolean; // Para ocultar botones flotantes cuando está en modal
   disableBuilders?: boolean; // Para deshabilitar completamente la funcionalidad de builders
+
+  initialValues?: Record<string, string>;
 }
 
 interface RouteParams {
@@ -113,6 +115,7 @@ export const DynamicForm = React.forwardRef<
       initialBuilderItems = [],
       hideButtons = false,
       disableBuilders = false,
+      initialValues,
     },
     ref
   ) => {
@@ -813,7 +816,8 @@ export const DynamicForm = React.forwardRef<
 
     // Inicializar valores del formulario
     React.useEffect(() => {
-      const initialValues: Record<string, string> = {};
+      // Valores iniciales calculados a partir de formData (como antes)
+      const computedInitialValues: Record<string, string> = {};
       formData.forEach((form: IFormResponse) => {
         form.fields.forEach((field: IFields) => {
           // 🔧 Restaurar carga de selected_value para precargar valores iniciales
@@ -834,9 +838,22 @@ export const DynamicForm = React.forwardRef<
             }
           }
 
-          initialValues[field.code] = value;
+          computedInitialValues[field.code] = value;
         });
       });
+
+      // 🔁 Si llegan initialValues por props (REVERT_ACT), sobrescribir sólo esos campos
+      const mergedInitialValues: Record<string, string> = {
+        ...computedInitialValues,
+      };
+
+      if (initialValues && Object.keys(initialValues).length > 0) {
+        Object.entries(initialValues).forEach(([code, val]) => {
+          if (typeof val === 'string') {
+            mergedInitialValues[code] = val;
+          }
+        });
+      }
 
       // 🔧 FIX: Aplicar solo visibilidad BASE (sin lógica condicional automática)
       // Aunque cargamos selected_value, NO aplicamos lógica condicional automáticamente
@@ -869,24 +886,25 @@ export const DynamicForm = React.forwardRef<
         });
       });
 
-      setFormValues(initialValues);
+      setFormValues(mergedInitialValues);
       setVisibleFields(baseVisibleFields);
 
       // 🔧 APLICAR lógica condicional con valores iniciales precargados
       // Solo si hay valores que puedan activar condiciones
-      const hasInitialValues = Object.values(initialValues).some(
+      const hasInitialValues = Object.values(mergedInitialValues).some(
         (value) => value && value.trim() !== ''
       );
 
       if (hasInitialValues) {
         // Aplicar lógica de visibilidad con los valores iniciales
-        const conditionalVisibleFields = applyVisibilityLogic(initialValues);
+        const conditionalVisibleFields =
+          applyVisibilityLogic(mergedInitialValues);
         setVisibleFields(conditionalVisibleFields);
       }
 
       // Cargar datos existentes después de inicializar (esto puede sobrescribir si hay datos guardados)
       loadExistingData();
-    }, [formData, loadExistingData]);
+    }, [formData, loadExistingData, initialValues]);
 
     // Inicializar builder items desde props (solo si builders están habilitados)
     useEffect(() => {
