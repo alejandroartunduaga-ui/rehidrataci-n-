@@ -39,58 +39,48 @@ export const ViewDocument = () => {
   const [showResetSuccessToast, setShowResetSuccessToast] = useState(false);
   const [showResetErrorToast, setShowResetErrorToast] = useState(false);
   const [showReturnActaModal, setShowReturnActaModal] = useState(false);
+  const [showReturnActaSuccessToast, setShowReturnActaSuccessToast] =
+    useState(false);
+  const [showReturnActaErrorToast, setShowReturnActaErrorToast] = useState(false);
   const [returnObservation, setReturnObservation] = useState('');
   const [isReturningActa, setIsReturningActa] = useState(false);
   const handleOpenReturnActaModal = () => {
-    setReturnObservation(''); 
+    setReturnObservation('');
     setShowReturnActaModal(true);
   };
   const handleCloseReturnActaModal = () => setShowReturnActaModal(false);
   const handleCloseDeleteModal = () => setShowDeleteModal(false);
 
-const handleConfirmReturnActa = async (observation: string) => {
-  const authToken = token || session?.token;
+  const handleConfirmReturnActa = async (observation: string) => {
+    const authToken = token || session?.token;
+    // Mismo criterio que useVisitDetail: electrician_id, id o userId (coordinadores pueden venir con otro campo)
+    const u = user?.user as { electrician_id?: string; id?: string; userId?: string } | undefined;
+    const userId = u?.electrician_id ?? u?.id ?? u?.userId;
 
-  if (
-    !workOrderId ||
-    isReturningActa ||
-    !user?.user?.electrician_id ||
-    !authToken
-  )
-    return;
-
-  try {
-    setIsReturningActa(true);
-
-    const resp = await fetch(
-      'https://electricians.dev.bia.app/ms-electricians-api/app/electrician-visits/cms/visit/revert-act',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-user-id': user.user.electrician_id,
-          authorization: `Bearer ${authToken}`,
-        },
-        body: JSON.stringify({
-          visit_id: workOrderId,
-          observation,
-        }),
-      }
-    );
-
-    if (!resp.ok) {
-      const text = await resp.text().catch(() => '');
-      throw new Error(text || `Error revert-act (${resp.status})`);
+    if (!workOrderId || isReturningActa || !userId || !authToken) {
+      return;
     }
 
-    setShowReturnActaModal(false);
-    setReturnObservation('');
-  } catch (error) {
-    console.error('[RETURN_ACTA] Error', error);
-  } finally {
-    setIsReturningActa(false);
-  }
-};
+    try {
+      setIsReturningActa(true);
+
+      // Solo coordinador: POST revert-act (visit_id + observation). No usar en mobile.
+      await httpClient.post(
+        workOrdersEndpoints.revertAct,
+        { visit_id: workOrderId, observation },
+        { headers: { 'x-user-id': String(userId) } }
+      );
+
+      setShowReturnActaModal(false);
+      setReturnObservation('');
+      setShowReturnActaSuccessToast(true);
+    } catch {
+      setShowReturnActaModal(false);
+      setShowReturnActaErrorToast(true);
+    } finally {
+      setIsReturningActa(false);
+    }
+  };
  
   const handleConfirmResetVisit = () => {
     if (resetVisitMutation.isPending || !workOrderId) return;
@@ -310,6 +300,24 @@ const handleConfirmReturnActa = async (observation: string) => {
           theme='error'
           onClose={() => {
             setShowResetErrorToast(false);
+          }}
+        />
+      )}
+      {showReturnActaSuccessToast && (
+        <BiaToast
+          message='Acta devuelta al contratista'
+          theme='success'
+          onClose={() => {
+            setShowReturnActaSuccessToast(false);
+          }}
+        />
+      )}
+      {showReturnActaErrorToast && (
+        <BiaToast
+          message='Esta acta ya fue devuelta al contratista o no está en estado válido para devolución.'
+          theme='error'
+          onClose={() => {
+            setShowReturnActaErrorToast(false);
           }}
         />
       )}

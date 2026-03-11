@@ -45,11 +45,7 @@ export const useVisitDetail = ({ activity_id }: IuseVisitDetailProps) => {
     },
   });
 
-  useEffect(() => {
-    if (!data) return;
-    console.log('VISIT_DETAIL_DATA_KEYS', Object.keys(data as any));
-    console.log('VISIT_DETAIL_DATA_SAMPLE', data);
-  }, [data]);
+  // Nota: evitar logs de payloads grandes (pueden congelar la app)
   
   const detailAny: any = data ?? localVisitDetail;
 

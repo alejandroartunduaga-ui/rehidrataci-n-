@@ -1,3 +1,4 @@
+/* global fetch */
 import {
   IHttpClient,
   RequestOptions,
@@ -91,6 +92,7 @@ class HttpClient {
 
     requestOptions.signal = controller.signal;
 
+    // eslint-disable-next-line no-undef -- fetch está en el entorno (DOM / Node 18+)
     const response = await fetch(url, requestOptions);
     clearTimeout(timeoutId); // Limpiar timeout
 

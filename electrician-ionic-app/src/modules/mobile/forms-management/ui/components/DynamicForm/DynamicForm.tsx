@@ -111,8 +111,8 @@ export const DynamicForm = React.forwardRef<
       onCancel,
       submitButtonText = 'Guardar',
       cancelButtonText = 'Cancelar',
-      initialPhotos = [],
-      initialBuilderItems = [],
+      initialPhotos,
+      initialBuilderItems,
       hideButtons = false,
       disableBuilders = false,
       initialValues,
@@ -125,11 +125,17 @@ export const DynamicForm = React.forwardRef<
     const { getQueryParam } = useQueryParams();
     const activityStatus = getQueryParam('activity_status');
     const [formValues, setFormValues] = useState<Record<string, string>>({});
+    /** Valores cargados desde persistencia local (ANSWERS); null = aún no cargados */
+    const [localFields, setLocalFields] = useState<Record<string, string> | null>(null);
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [parentSelected, setParentSelected] = useState<string | null>(null);
     const [visibleFields, setVisibleFields] = useState<Set<string>>(new Set());
     const [showErrors, setShowErrors] = useState<boolean>(false);
-    const [photos, setPhotos] = useState<IPhotosAdd[]>(initialPhotos);
+    const [photos, setPhotos] = useState<IPhotosAdd[]>([]);
+    /** Fotos cargadas desde persistencia local; null = aún no cargados */
+    const [localPhotos, setLocalPhotos] = useState<IPhotosAdd[] | null>(null);
+    /** Builders cargados desde persistencia local; null = aún no cargados */
+    const [localBuilderItems, setLocalBuilderItems] = useState<Record<string, ITransformer[]> | null>(null);
     const [isLoadingData, setIsLoadingData] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [loadingMessage, setLoadingMessage] = useState<string>('');
@@ -684,95 +690,77 @@ export const DynamicForm = React.forwardRef<
       [formData]
     );
 
-    // Función para cargar datos existentes desde la base de datos
+    // Función para cargar datos existentes desde la base de datos (solo persiste en estado localFields; el merge final lo hace el efecto único)
     const loadExistingData = useCallback(async () => {
-      if (!activity_id || !page_code) return;
+      if (!activity_id || !page_code) {
+        setLocalFields({});
+        return;
+      }
 
       try {
         setIsLoadingData(true);
 
-        // Consultar datos existentes en la base de datos
         const existingData = await getFormSubmission(activity_id, page_code);
 
-        if (existingData) {
-          // Cargar valores normales en los campos
-          if (existingData.normalFields) {
-            // Validar y filtrar valores para campos DROPDOWN antes de cargar
-            const validatedFields: Record<string, string> = {};
-            Object.entries(existingData.normalFields).forEach(
-              ([fieldCode, value]) => {
-                // Buscar la definición del campo
-                let fieldDefinition: IFields | null = null;
-                for (const form of formData) {
-                  const field = form.fields.find((f) => f.code === fieldCode);
-                  if (field) {
-                    fieldDefinition = field;
-                    break;
-                  }
-                }
-
-                // Validación especial para campos DROPDOWN
-                if (fieldDefinition?.input_type === 'DROPDOWN' && value) {
-                  const availableOptions =
-                    fieldDefinition.items?.map((item) =>
-                      item.option.toLowerCase()
-                    ) || [];
-                  const valueExists = availableOptions.includes(
-                    value.toLowerCase()
-                  );
-
-                  if (!valueExists) {
-                    validatedFields[fieldCode] = ''; // Limpiar el valor si no existe en las opciones
-                  } else {
-                    validatedFields[fieldCode] = value;
-                  }
-                } else {
-                  // Para otros tipos de campo, cargar el valor sin validación adicional
-                  validatedFields[fieldCode] = value;
+        if (existingData?.normalFields) {
+          const validatedFields: Record<string, string> = {};
+          Object.entries(existingData.normalFields).forEach(
+            ([fieldCode, value]) => {
+              let fieldDefinition: IFields | null = null;
+              for (const form of formData) {
+                const field = form.fields.find((f) => f.code === fieldCode);
+                if (field) {
+                  fieldDefinition = field;
+                  break;
                 }
               }
-            );
 
-            // Aplicar lógica de visibilidad usando la función centralizada
-            const newVisibleFields = applyVisibilityLogic(validatedFields);
+              if (fieldDefinition?.input_type === 'DROPDOWN' && value) {
+                const availableOptions =
+                  fieldDefinition.items?.map((item) =>
+                    item.option.toLowerCase()
+                  ) || [];
+                const valueExists = availableOptions.includes(
+                  value.toLowerCase()
+                );
+                validatedFields[fieldCode] = valueExists ? value : '';
+              } else {
+                validatedFields[fieldCode] = value;
+              }
+            }
+          );
+          setLocalFields(validatedFields);
+        } else {
+          setLocalFields({});
+        }
 
-            setFormValues((prev) => ({
-              ...prev,
-              ...validatedFields,
-            }));
-
-            setVisibleFields(newVisibleFields);
-          }
-
-          // Cargar fotos existentes - Actualizar para nueva estructura
+        if (existingData) {
+          // Fotos: guardar en estado local; el merge (rehidratación gana) se hace en el efecto
           if (existingData.photos && existingData.photos.length > 0) {
-            // Procesar fotos existentes para asegurar compatibilidad con nueva interfaz
             const processedPhotos = existingData.photos.map(
               (photo: IPhotosAdd) => {
-                // Si es una foto con Blob, crear displayUrl
                 if (photo.blob && !photo.displayUrl) {
                   return {
                     ...photo,
                     displayUrl: URL.createObjectURL(photo.blob),
-                    url: URL.createObjectURL(photo.blob), // Para compatibilidad
+                    url: URL.createObjectURL(photo.blob),
                   };
                 }
-                // Si solo tiene url string, mantenerla
                 return photo;
               }
             );
-
-            setPhotos(processedPhotos);
+            setLocalPhotos(processedPhotos);
+          } else {
+            setLocalPhotos([]);
           }
 
-          // Cargar datos de builders si existen y no están deshabilitados
+          // Builders: guardar en estado local; el merge (rehidratación gana) se hace en el efecto
           if (!disableBuilders && existingData.builderFields) {
             const loadedBuilderItems: Record<string, ITransformer[]> = {};
 
             Object.entries(existingData.builderFields).forEach(
               ([widgetCode, fields]) => {
                 if (Array.isArray(fields) && fields.length > 0) {
-                  // Agrupar campos por items (asumiendo que vienen en orden)
                   const groupedItems: ITransformer[] = [];
                   const fieldsPerItem =
                     formData.find((form) => form.code === widgetCode)?.fields
@@ -797,11 +785,17 @@ export const DynamicForm = React.forwardRef<
               }
             );
 
-            setBuilderItems(loadedBuilderItems);
+            setLocalBuilderItems(loadedBuilderItems);
+          } else {
+            setLocalBuilderItems({});
           }
+        } else {
+          setLocalPhotos([]);
+          setLocalBuilderItems({});
         }
       } catch (error) {
         console.error('❌ Error al cargar datos existentes:', error);
+        setLocalFields({});
       } finally {
         setIsLoadingData(false);
       }
@@ -811,73 +805,57 @@ export const DynamicForm = React.forwardRef<
       getFormSubmission,
       disableBuilders,
       formData,
-      applyVisibilityLogic,
     ]);
 
-    // Inicializar valores del formulario
+    // Disparar carga de datos locales cuando tengamos formData y params
     React.useEffect(() => {
-      // Valores iniciales calculados a partir de formData (como antes)
-      const computedInitialValues: Record<string, string> = {};
+      if (!formData?.length || !activity_id || !page_code) return;
+      setLocalFields(null);
+      setLocalPhotos(null);
+      setLocalBuilderItems(null);
+      loadExistingData();
+    }, [formData, activity_id, page_code, loadExistingData]);
+
+    // Un solo merge final: base -> local -> initialValues (REVERT_ACT); un único setFormValues
+    React.useEffect(() => {
+      const baseValues: Record<string, string> = {};
       formData.forEach((form: IFormResponse) => {
         form.fields.forEach((field: IFields) => {
-          // 🔧 Restaurar carga de selected_value para precargar valores iniciales
           let value =
             field.selected_value && field.selected_value.length > 0
               ? field.selected_value[0]
               : '';
-
-          // Validación especial para campos DROPDOWN
           if (field.input_type === 'DROPDOWN' && value) {
-            // Verificar que el valor existe en los items disponibles (comparación case-insensitive)
             const availableOptions =
               field.items?.map((item) => item.option.toLowerCase()) || [];
-            const valueExists = availableOptions.includes(value.toLowerCase());
-
-            if (!valueExists) {
-              value = ''; // Limpiar el valor si no existe en las opciones
-            }
+            if (!availableOptions.includes(value.toLowerCase())) value = '';
           }
-
-          computedInitialValues[field.code] = value;
+          baseValues[field.code] = value;
         });
       });
 
-      // 🔁 Si llegan initialValues por props (REVERT_ACT), sobrescribir sólo esos campos
-      const mergedInitialValues: Record<string, string> = {
-        ...computedInitialValues,
-      };
+      const localValues = localFields ?? {};
+      const rehydrationValues =
+        initialValues && Object.keys(initialValues).length > 0
+          ? initialValues
+          : {};
+      const merged = { ...baseValues, ...localValues, ...rehydrationValues };
 
-      if (initialValues && Object.keys(initialValues).length > 0) {
-        Object.entries(initialValues).forEach(([code, val]) => {
-          if (typeof val === 'string') {
-            mergedInitialValues[code] = val;
-          }
-        });
-      }
+      setFormValues(merged);
 
-      // 🔧 FIX: Aplicar solo visibilidad BASE (sin lógica condicional automática)
-      // Aunque cargamos selected_value, NO aplicamos lógica condicional automáticamente
-      // Solo mostrar campos que SIEMPRE deben ser visibles
       const baseVisibleFields = new Set<string>();
-
       formData.forEach((form: IFormResponse) => {
         form.fields.forEach((field: IFields) => {
-          // Campos FILE visibles solo si no tienen condición específica
           if (field.type === 'FILE' || field.input_type === 'FILE') {
-            // Solo añadir si no tiene condición específica o está en formulario sin condición/widget_parent
             if (
               (!field.condition || field.condition === '') &&
               (!form.condition || form.condition === 'widget_parent')
             ) {
               baseVisibleFields.add(field.code);
             }
-          }
-          // Campos de formularios widget_parent siempre visibles (excepto FILE ya manejados arriba)
-          else if (form.condition === 'widget_parent') {
+          } else if (form.condition === 'widget_parent') {
             baseVisibleFields.add(field.code);
-          }
-          // Campos de formularios sin condición siempre visibles (excepto FILE ya manejados arriba)
-          else if (
+          } else if (
             !form.condition &&
             (!field.condition || field.condition === '')
           ) {
@@ -886,45 +864,40 @@ export const DynamicForm = React.forwardRef<
         });
       });
 
-      setFormValues(mergedInitialValues);
       setVisibleFields(baseVisibleFields);
 
-      // 🔧 APLICAR lógica condicional con valores iniciales precargados
-      // Solo si hay valores que puedan activar condiciones
-      const hasInitialValues = Object.values(mergedInitialValues).some(
-        (value) => value && value.trim() !== ''
+      const hasAnyValues = Object.values(merged).some(
+        (v) => v && String(v).trim() !== ''
       );
-
-      if (hasInitialValues) {
-        // Aplicar lógica de visibilidad con los valores iniciales
-        const conditionalVisibleFields =
-          applyVisibilityLogic(mergedInitialValues);
+      if (hasAnyValues) {
+        const conditionalVisibleFields = applyVisibilityLogic(merged);
         setVisibleFields(conditionalVisibleFields);
       }
+    }, [formData, localFields, initialValues, applyVisibilityLogic]);
 
-      // Cargar datos existentes después de inicializar (esto puede sobrescribir si hay datos guardados)
-      loadExistingData();
-    }, [formData, loadExistingData, initialValues]);
-
-    // Inicializar builder items desde props (solo si builders están habilitados)
+    // Merge fotos y builders: local primero, rehidratación (REVERT_ACT) gana cuando viene por props
     useEffect(() => {
-      if (
-        !disableBuilders &&
-        initialBuilderItems &&
-        initialBuilderItems.length > 0
-      ) {
-        const groupedBuilderItems: Record<string, ITransformer[]> = {};
-        initialBuilderItems.forEach((item) => {
-          if (item.widget_code) {
-            if (!groupedBuilderItems[item.widget_code]) {
-              groupedBuilderItems[item.widget_code] = [];
-            }
-            groupedBuilderItems[item.widget_code].push(item);
-          }
-        });
-        setBuilderItems(groupedBuilderItems);
-      }
-    }, [initialBuilderItems, disableBuilders]);
+      const finalPhotos =
+        initialPhotos !== undefined ? initialPhotos : (localPhotos ?? []);
+      setPhotos(finalPhotos);
+
+      if (disableBuilders) return;
+
+      const finalBuilderItems: Record<string, ITransformer[]> =
+        initialBuilderItems !== undefined && initialBuilderItems.length > 0
+          ? (() => {
+              const grouped: Record<string, ITransformer[]> = {};
+              initialBuilderItems.forEach((item) => {
+                if (item.widget_code) {
+                  if (!grouped[item.widget_code]) grouped[item.widget_code] = [];
+                  grouped[item.widget_code].push(item);
+                }
+              });
+              return grouped;
+            })()
+          : (localBuilderItems ?? {});
+      setBuilderItems(finalBuilderItems);
+    }, [localPhotos, localBuilderItems, initialPhotos, initialBuilderItems, disableBuilders]);
 
     // Limpiar errores de campos que ya no son visibles cuando cambia visibleFields
     useEffect(() => {
